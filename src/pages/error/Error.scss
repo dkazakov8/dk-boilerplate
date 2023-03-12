@@ -1,0 +1,47 @@
+@import "mixins.scss";
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logoLink {
+  display: block;
+  margin-bottom: 24px;
+
+  .logo {
+    font-size: 188px;
+    height: 48px;
+    transition: color 0.2s;
+
+    > svg {
+      height: 48px;
+    }
+
+    &:hover {
+      color: var(--textYellowBrand);
+    }
+  }
+}
+
+.image {
+  margin-bottom: 32px;
+  padding-top: 40px;
+}
+
+.title {
+  @include body18Bold;
+  padding-bottom: 12px;
+}
+
+.subtitle {
+  @include body16Regular;
+}
+
+.link {
+  @include link;
+  @include body16Regular;
+  padding: 12px 0;
+}

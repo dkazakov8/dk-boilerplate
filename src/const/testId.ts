@@ -1,0 +1,23 @@
+export const testId = {
+  buttonSignInDesktop: 'buttonSignInDesktop',
+  buttonSignInInsideModal: 'buttonSignInInsideModal',
+  buttonGetCodeInsideModal: 'buttonGetCodeInsideModal',
+  buttonContinueInBrowser: 'buttonContinueInBrowser',
+  buttonMobileMenu: 'buttonMobileMenu',
+  buttonContinueInsideModal: 'buttonContinueInsideModal',
+  buttonCloseInsideModal: 'buttonCloseInsideModal',
+  buttonBackInsideModal: 'buttonBackInsideModal',
+  buttonSearchMobile: 'buttonSearchMobile',
+  buttonSearchDesktop: 'buttonSearchDesktop',
+  buttonSearchSubmitDesktop: 'buttonSearchSubmitDesktop',
+  modal: 'modal',
+  splashScreen: 'splashScreen',
+  mainLeftMenu: 'mainLeftMenu',
+  logoInHeader: 'logoInHeader',
+  searchWrapperDesktop: 'searchWrapperDesktop',
+  searchWrapperMobile: 'searchWrapperMobile',
+
+  searchCategories: 'searchCategories',
+  searchProducts: 'searchProducts',
+  suggestions: 'suggestions',
+} as const;

@@ -1,0 +1,22 @@
+import { redirectToGenerator, TypeRedirectToParams } from 'dk-react-mobx-globals';
+
+import { routes } from 'routes';
+import { history } from 'utils';
+import { TypeAction } from 'models';
+
+export const redirectTo: TypeAction<TypeRedirectToParams<typeof routes>> = (globals, params) => {
+  if (IS_CLIENT) {
+    window.scroll(0, 0);
+  }
+
+  return redirectToGenerator({
+    routes,
+    history,
+    globals,
+    isClient: IS_CLIENT,
+    redirectTo: globals.actions.routing.redirectTo,
+    routerStore: globals.store.router,
+    routeError404: routes.error404,
+    routeError500: routes.error500,
+  })(params);
+};

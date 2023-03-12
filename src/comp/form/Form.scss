@@ -1,0 +1,215 @@
+@import "mixins.scss";
+
+$input_height: 46px;
+
+.inputWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+
+  label {
+    @include inline-top;
+    @include ellipsis;
+    @include caption14Bold;
+    user-select: none;
+    color: var(--textSecondary);
+    padding-bottom: 8px;
+    cursor: pointer;
+  }
+
+  .inputInner {
+    width: 100%;
+    position: relative;
+    border: 1px solid var(--lineBorder);
+    border-radius: 12px;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bgWhite);
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  textarea {
+    @include body18Regular;
+    display: block;
+    min-height: $input_height;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 0 16px;
+
+    &::placeholder {
+      color: var(--textTertiary);
+    }
+  }
+
+  &.hasValue {
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    textarea {
+      padding-right: 0;
+    }
+
+    &.noClear {
+      input[type="text"],
+      input[type="tel"],
+      input[type="number"],
+      textarea {
+        padding-right: 16px;
+      }
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  &.focused,
+  &:hover {
+    .inputInner {
+      border-color: var(--lineBorderActive);
+    }
+  }
+
+  &.hasErrors {
+    .inputInner {
+      border-color: var(--textError) !important;
+    }
+  }
+
+  .errors {
+    @include caption14Regular;
+    color: var(--textError);
+    width: 100%;
+    padding-top: 8px;
+
+    .errorItem {
+      padding-bottom: 5px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    user-select: none;
+
+    .inputInner {
+      background: var(--bgGray);
+    }
+  }
+
+  .iconReset {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--textTertiary);
+    transition: color 0.2s;
+    padding: 11px 12px;
+
+    &:hover {
+      color: var(--buttonBlackHover);
+    }
+  }
+
+  &.checkbox {
+    cursor: pointer;
+    flex-flow: row nowrap;
+    align-items: center;
+    user-select: none;
+
+    label {
+      @include body16Regular;
+      color: var(--textMainBlack);
+      padding: 0 16px 0 0;
+      white-space: initial;
+      text-overflow: initial;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .toggle {
+      width: 32px;
+      height: 20px;
+      background: var(--buttonBlack);
+      border-radius: 10px;
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: background 0.2s;
+      position: relative;
+
+      .toggleInner {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        z-index: 1;
+        top: 2px;
+        left: 2px;
+        background: var(--buttonWhite);
+        border-radius: 50%;
+        transition: transform 0.3s, background 0.3s;
+      }
+
+      :global(.mobile) & {
+        width: 52px;
+        height: 32px;
+        border-radius: 16px;
+
+        .toggleInner {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+
+    &.checked {
+      .toggle {
+        background: var(--textYellowBrand);
+
+        .toggleInner {
+          transform: translateX(12px);
+
+          :global(.mobile) & {
+            transform: translateX(20px);
+          }
+        }
+      }
+    }
+
+    &.disabled {
+      .toggle {
+        background: var(--lineSeparatorLight) !important;
+
+        .toggleInner {
+          background: var(--bgWhite) !important;
+        }
+      }
+    }
+
+    &:hover {
+      .toggle {
+        background: var(--buttonBlackHover);
+      }
+
+      &.checked {
+        .toggle {
+          background: var(--buttonYellowBrandHover);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,292 @@
+@mixin inline-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin link {
+  color: var(--linkBlue);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--linkBlueHover);
+  }
+}
+
+/* Buttons */
+
+@mixin button {
+  @include body18Regular;
+  border-radius: 32px;
+  padding: 0;
+  height: 48px;
+  line-height: 48px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  position: relative;
+  flex-shrink: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  overflow: hidden;
+}
+
+@mixin button-yellow {
+  background: var(--textYellowBrand);
+  color: var(--textMainBlack);
+
+  .ripple {
+    background: var(--bgWhite);
+  }
+
+  &:hover {
+    background: var(--buttonYellowBrandHover);
+  }
+}
+
+@mixin button-grey {
+  background: var(--buttonSecondary);
+  color: var(--textMainBlack);
+
+  .ripple {
+    background: var(--textMainBlack);
+  }
+
+  &:hover {
+    background: var(--buttonSecondaryHover);
+  }
+}
+
+@mixin button-white {
+  background: var(--bgWhite);
+  color: var(--textMainBlack);
+
+  .ripple {
+    background: var(--textMainBlack);
+  }
+
+  &:hover {
+    background: var(--buttonSecondary);
+  }
+}
+
+@mixin button-black {
+  background: var(--buttonBlack);
+  color: var(--bgWhite);
+
+  .ripple {
+    background: var(--bgWhite);
+  }
+
+  &:hover {
+    background: var(--buttonBlackHover);
+  }
+}
+
+/* Modal & Confirm */
+
+@mixin modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  background: var(--bgGrayTransparent);
+  transition-property: opacity;
+  overflow: hidden;
+
+  &.isLeaving {
+    opacity: 0;
+  }
+
+  :global {
+    animation-name: fadeIn;
+  }
+
+  :global(.mobile) & {
+    background: var(--bgWhiteAlpha);
+  }
+}
+
+@mixin confirm-wrapper {
+  position: relative;
+  transition-property: opacity;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@mixin modal-wrapper {
+  @include confirm-wrapper;
+
+  :global(.mobile) & {
+    padding: 0;
+    align-items: stretch;
+  }
+}
+
+@mixin confirm {
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  background: var(--bgWhite);
+  border-radius: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  max-width: 640px;
+  max-height: 100%;
+
+  :global {
+    animation: fadeIn 0.3s;
+  }
+}
+
+@mixin modal {
+  @include confirm;
+
+  :global(.mobile) & {
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
+
+@mixin spinner {
+  border: 3px solid transparent;
+  border-top-color: var(--textMainBlack);
+  border-bottom-color: var(--textMainBlack);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+
+  :global {
+    animation: rotating 0.5s linear infinite;
+  }
+}
+
+@mixin overlay {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--bgWhiteAlpha);
+  margin-left: -99999px;
+  opacity: 0;
+  transition: opacity 0.3s, margin-left 0.3s ease 0.3s;
+}
+
+@mixin overlay-visible {
+  margin-left: 0;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* Text styles */
+
+@mixin title0 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+@mixin title0Upper {
+  @include title0;
+  text-transform: uppercase;
+}
+
+@mixin title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+@mixin titleUpper {
+  @include title;
+  text-transform: uppercase;
+}
+
+@mixin title2 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+@mixin title2Upper {
+  @include title2;
+  text-transform: uppercase;
+}
+
+@mixin body16Regular {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin body16Bold {
+  @include body16Regular;
+  font-weight: 600;
+}
+
+@mixin body18Regular {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin body18Bold {
+  @include body18Regular;
+  font-weight: 600;
+}
+
+@mixin caption14Regular {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin caption14Bold {
+  @include caption14Regular;
+  font-weight: 600;
+}
+
+@mixin caption14BoldUpper {
+  @include caption14Bold;
+  text-transform: uppercase;
+}
+
+@mixin caption12Regular {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+@mixin caption12Upper {
+  @include caption12Regular;
+  text-transform: uppercase;
+}
+
+@mixin promo {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 40px;
+  text-transform: uppercase;
+}

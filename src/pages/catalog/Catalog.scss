@@ -1,0 +1,488 @@
+@import "mixins.scss";
+
+$block_top_padding: 32px;
+$title_bottom_padding: 24px;
+
+.wrapper {
+  position: relative;
+
+  &.loading {
+    .overlay {
+      @include overlay-visible;
+    }
+  }
+
+  .overlay {
+    @include overlay;
+
+    .spinner {
+      @include spinner;
+      z-index: 10;
+      top: 40px;
+
+      :global(.mobile) & {
+        top: 110px;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    max-width: 100%;
+
+    .menuWrapper {
+      flex-grow: 1;
+      will-change: min-height;
+
+      :global(.mobile) & {
+        display: none;
+      }
+    }
+
+    .mainContent {
+      width: 838px;
+      flex-shrink: 0;
+      position: relative;
+      padding-top: 32px;
+
+      :global(.mobile) & {
+        width: 100%;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.buttonAddressWrapperMobile {
+  display: none;
+
+  :global(.mobile) & {
+    display: block;
+  }
+}
+
+.categoriesHeroWrapper {
+  display: none;
+  position: relative;
+  margin: 20px auto 20px auto;
+
+  :global(.mobile) & {
+    display: block;
+    width: 100% !important;
+  }
+
+  .buttonLeft,
+  .buttonRight {
+    position: absolute;
+    z-index: 2;
+    top: 17px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    :global {
+      animation: fadeIn 0.3s;
+    }
+
+    &.buttonLeft {
+      left: -30px;
+    }
+
+    &.buttonRight {
+      right: -30px;
+    }
+
+    :global(.mobile) & {
+      display: none;
+    }
+  }
+
+  .sliderWrapper {
+    padding-bottom: 12px;
+    overflow: hidden;
+
+    :global(.mobile) & {
+      overflow-x: auto;
+    }
+  }
+
+  .categoriesHero {
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 0.3s;
+    margin: 0 auto;
+    width: fit-content;
+
+    :global(.mobile) & {
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .categoryHero {
+      padding: 0 10px;
+      width: 100px;
+
+      .inner {
+        user-select: none;
+
+        .imageWrapper {
+          border-radius: 80px;
+          overflow: hidden;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+
+            &.imagePlaceholder {
+              width: 41px;
+            }
+          }
+
+          &.imageWrapperBuyAgain {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            background-color: #ffe6a3;
+
+            img {
+              position: absolute;
+              width: 65px;
+              transform: rotate(45deg);
+            }
+
+            &.buyAgainTwoPhoto {
+              img {
+                width: 55px;
+              }
+
+              span:nth-child(1) img {
+                top: -10px;
+                left: -10px;
+              }
+
+              span:nth-child(2) img {
+                right: -4px;
+                top: 28px;
+              }
+            }
+
+            &.buyAgainThreePhoto {
+              img {
+                width: 45px;
+              }
+
+              span:nth-child(1) img {
+                left: -14px;
+                bottom: 9px;
+              }
+
+              span:nth-child(2) img {
+                right: -14px;
+                bottom: 9px;
+              }
+
+              span:nth-child(3) img {
+                top: -5px;
+              }
+            }
+          }
+        }
+
+        .title {
+          @include caption14Regular;
+          text-align: center;
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+}
+
+.categoriesFeaturedWrapper {
+  .featuredBlock {
+    padding-top: 0;
+    margin-bottom: 28px;
+  }
+}
+
+.categoriesRegularWrapper {
+  .categoriesTitle {
+    @include title;
+    padding-bottom: $title_bottom_padding;
+  }
+
+  .categoriesRegular {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -6px;
+
+    :global(.mobile) & {
+      margin: -4px;
+    }
+
+    .categoryRegular {
+      width: 25%;
+      padding: 6px;
+
+      :global(.mobile) & {
+        width: 33.333333%;
+        padding: 4px;
+      }
+
+      .inner {
+        @include body18Bold;
+        border-radius: 8px 10px;
+        user-select: none;
+        height: 0px;
+        background-color: var(--bgGray);
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 100%;
+
+        .intersection {
+          position: absolute;
+          z-index: 2;
+          left: 50%;
+          top: 0;
+          width: 1px;
+          height: 1px;
+        }
+
+        :global(.mobile) & {
+          @include caption12Regular;
+        }
+
+        .imageWrapper {
+          img {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+
+            &.imagePlaceholder {
+              width: 41px;
+            }
+          }
+        }
+
+        .title {
+          padding: 8px 10px;
+          position: relative;
+          z-index: 2;
+          transition: color 0.2s;
+        }
+      }
+
+      &:hover {
+        .inner {
+          .title {
+            color: var(--textRedBrand);
+          }
+        }
+      }
+    }
+  }
+}
+
+.buttonCantFind {
+  margin-top: 24px;
+  align-self: flex-start;
+
+  :global(.mobile) & {
+    align-self: stretch;
+  }
+}
+
+.blockLandingLink {
+  display: none;
+  flex-flow: row nowrap;
+  padding-top: 16px;
+  padding-bottom: 20px;
+
+  :global(.mobile) & {
+    display: flex;
+    padding-bottom: 10px;
+  }
+
+  .buttonLandingLink {
+    @include button;
+    @include button-grey;
+    @include body16Regular;
+    width: 100%;
+    height: 60px;
+    padding: 14px 10px 14px 24px;
+    justify-content: flex-start;
+
+    .iconLeft {
+      flex-shrink: 0;
+      font-size: 32px;
+      margin-right: 16px;
+    }
+
+    .text {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .iconRight {
+      flex-shrink: 0;
+      font-size: 24px;
+      color: var(--iconTertiary);
+      transition: color 0.2s;
+    }
+
+    &:hover {
+      .iconRight {
+        flex-shrink: 0;
+        font-size: 24px;
+        color: var(--textMainBlack);
+      }
+    }
+  }
+}
+
+.blockActiveOrdersWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+
+  :global(.mobile) & {
+    overflow-x: auto;
+    flex-direction: row;
+  }
+
+  .buttonOrder {
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 18px;
+    margin-bottom: 12px;
+    font-size: 16px;
+
+    :global(.mobile) & {
+      margin-bottom: 0;
+      margin-right: 12px;
+      max-width: 90%;
+      text-align: left;
+      line-height: 22px;
+    }
+
+    svg {
+      color: var(--iconTertiary);
+    }
+
+    .buttonOrderInner {
+      display: flex;
+      align-items: center;
+
+      .orderIcon {
+        font-size: 24px;
+        margin-right: 16px;
+        color: var(--iconBlack);
+
+        &.isDelivered {
+          color: var(--textYellowBrand);
+        }
+
+        svg {
+          color: currentColor;
+        }
+      }
+    }
+  }
+}
+
+.blockBannersSliders {
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  user-select: none;
+  margin-bottom: 40px;
+
+  :global(.mobile) & {
+    background: none;
+    padding: 0;
+    border-radius: 0px;
+    margin-bottom: 32px;
+  }
+
+  .buttonLeftSlider,
+  .buttonRightSlider {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    :global {
+      animation: fadeIn 0.3s;
+    }
+
+    &.buttonLeftSlider {
+      left: -30px;
+    }
+
+    &.buttonRightSlider {
+      right: -30px;
+    }
+
+    :global(.mobile) & {
+      display: none;
+    }
+  }
+
+  .bannersWrapper {
+    overflow: hidden;
+    margin: 0;
+
+    :global(.mobile) & {
+      overflow-x: auto;
+      padding-right: 0;
+      margin: 0 auto;
+    }
+
+    .banners {
+      display: flex;
+      flex-flow: row nowrap;
+      transition: transform 0.3s;
+      margin: 0 -6px;
+
+      :global(.mobile) & {
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .banner {
+        width: 271px;
+        height: 271px;
+        flex-shrink: 0;
+        margin: 0 6px;
+
+        img {
+          height: 100% !important;
+          width: auto !important;
+          right: 50% !important;
+          transform: translateX(50%);
+        }
+
+        :global(.mobile) & {
+          width: 166px;
+          height: 166px;
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+}
+
+.blockUpsell {
+  padding-top: 40px;
+
+  .buttonLoadMore {
+    margin-top: 20px;
+  }
+}

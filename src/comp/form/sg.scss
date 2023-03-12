@@ -1,0 +1,43 @@
+@import "mixins.scss";
+
+.root {
+  padding: 20px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #c4c4de;
+  margin: 24px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.form {
+  width: 100%;
+  display: grid;
+  grid-row-gap: 32px;
+  grid-column-gap: 32px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.formCheckbox {
+  width: 100%;
+  display: grid;
+  grid-row-gap: 32px;
+  grid-column-gap: 32px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.prepend {
+  font-size: 32px;
+  margin-left: 8px;
+}
+
+.append {
+  font-size: 32px;
+  margin-right: 8px;
+}

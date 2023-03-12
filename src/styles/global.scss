@@ -1,0 +1,94 @@
+@import "reset.scss";
+@import "mixins.scss";
+@import "animations.scss";
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/roboto-v20-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../assets/fonts/roboto-v20-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../assets/fonts/roboto-v20-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../assets/fonts/roboto-v20-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("../assets/fonts/roboto-v20-latin-regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/roboto-v20-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../assets/fonts/roboto-v20-latin-500.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../assets/fonts/roboto-v20-latin-500.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("../assets/fonts/roboto-v20-latin-500.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../assets/fonts/roboto-v20-latin-500.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/roboto-v20-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../assets/fonts/roboto-v20-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../assets/fonts/roboto-v20-latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("../assets/fonts/roboto-v20-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../assets/fonts/roboto-v20-latin-700.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Roboto", Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  color: var(--textMainBlack);
+  overflow-x: hidden;
+}
+
+* {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--textMainBlack);
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--bgWhite) inset !important;
+  -webkit-text-fill-color: var(--textMainBlack) !important;
+}

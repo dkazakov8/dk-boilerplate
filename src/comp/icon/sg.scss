@@ -1,0 +1,40 @@
+@import "mixins.scss";
+
+.root {
+  padding: 20px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #c4c4de;
+  margin-bottom: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: -10px -10px 32px -10px;
+
+  > * {
+    margin: 10px;
+    font-size: 24px;
+    color: var(--textSecondary);
+  }
+}
+
+.wrapper16 {
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: -10px -10px 0 -10px;
+
+  > * {
+    margin: 10px;
+    font-size: 16px;
+    color: var(--textSecondary);
+  }
+}

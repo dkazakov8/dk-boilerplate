@@ -1,0 +1,85 @@
+@import "mixins.scss";
+
+.root {
+  display: flex;
+  flex-flow: row nowrap;
+
+  .block {
+    margin: 20px;
+  }
+}
+
+.systemTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #c4c4de;
+  margin-bottom: 32px;
+}
+
+.systemLabel {
+  font-size: 15px;
+  line-height: 20px;
+  color: #8e8eb2;
+  margin: 12px 0 32px 0;
+}
+
+.title0 {
+  @include title0;
+}
+
+.title0Upper {
+  @include title0Upper;
+}
+
+.title {
+  @include title;
+}
+
+.titleUpper {
+  @include titleUpper;
+}
+
+.title2Upper {
+  @include title2Upper;
+}
+
+.body18Bold {
+  @include body18Bold;
+}
+
+.body18Regular {
+  @include body18Regular;
+}
+
+.body16Bold {
+  @include body16Bold;
+}
+
+.body16Regular {
+  @include body16Regular;
+}
+
+.caption14Regular {
+  @include caption14Regular;
+}
+
+.caption14Bold {
+  @include caption14Bold;
+}
+
+.caption14BoldUpper {
+  @include caption14BoldUpper;
+}
+
+.caption12Regular {
+  @include caption12Regular;
+}
+
+.caption12Upper {
+  @include caption12Upper;
+}
+
+.promo {
+  @include promo;
+}

@@ -1,0 +1,257 @@
+@import "mixins.scss";
+
+.root {
+  padding: 20px;
+
+  .title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 20px;
+  }
+
+  .block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    margin-bottom: 48px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--lineBorder);
+      padding-bottom: 32px;
+    }
+  }
+
+  .color {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    > div:first-child {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+
+    > div:last-child {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
+
+/* Text */
+
+.textMainBlack {
+  background: var(--textMainBlack);
+}
+
+.textSecondary {
+  background: var(--textSecondary);
+}
+
+.textMainWhite {
+  background: var(--textMainWhite);
+}
+
+.textTertiary {
+  background: var(--textTertiary);
+}
+
+.textSuccess {
+  background: var(--textSuccess);
+}
+
+.textError {
+  background: var(--textError);
+}
+
+.textSystemBlue {
+  background: var(--textSystemBlue);
+}
+
+.textYellowBrand {
+  background: var(--textYellowBrand);
+}
+
+.textSurge {
+  background: var(--textSurge);
+}
+
+/* Icons */
+
+.iconMainBlack {
+  background: var(--textMainBlack);
+}
+
+.iconSecondary {
+  background: var(--textSecondary);
+}
+
+.iconWhite {
+  background: var(--textMainWhite);
+}
+
+.iconTertiary {
+  background: var(--textTertiary);
+}
+
+.iconSuccess {
+  background: var(--textSuccess);
+}
+
+.iconError {
+  background: var(--textError);
+}
+
+.iconSystemBlue {
+  background: var(--textSystemBlue);
+}
+
+.iconYellowBrand {
+  background: var(--textYellowBrand);
+}
+
+.iconSurge {
+  background: var(--textSurge);
+}
+
+.iconPaleYellow {
+  background: var(--iconPaleYellow);
+}
+
+/* Borders */
+
+.lineBorder {
+  background: var(--lineBorder);
+}
+
+.lineBorderActive {
+  background: var(--lineBorderActive);
+}
+
+.lineProgressBar {
+  background: var(--lineProgressBar);
+}
+
+.lineBorderError {
+  background: var(--textError);
+}
+
+.lineSeparatorLight {
+  background: var(--lineSeparatorLight);
+}
+
+.lineSeparatorDark {
+  background: var(--lineSeparatorDark);
+}
+
+.lineSeparatorSystem {
+  background: var(--lineSeparatorSystem);
+}
+
+/* Backgrounds */
+
+.bgWhite {
+  background: var(--bgWhite);
+}
+
+.bgGray {
+  background: var(--bgGray);
+}
+
+.bgGrayTransparent {
+  background: var(--bgGrayTransparent);
+}
+
+.bgSystemGray {
+  background: var(--bgSystemGray);
+}
+
+.bgWhiteAlpha {
+  background: var(--bgWhiteAlpha);
+}
+
+.bgGlass {
+  background: var(--bgGlass);
+}
+
+.bgBlack {
+  background: var(--bgBlack);
+}
+
+.bgYellowBrand {
+  background: var(--textYellowBrand);
+}
+
+.bgYellowBrandLight {
+  background: var(--bgYellowBrandLight);
+}
+
+.bgSurgeLight {
+  background: var(--bgSurgeLight);
+}
+
+/* Buttons */
+
+.buttonYellowBrand {
+  background: var(--textYellowBrand);
+}
+
+.buttonYellowBrandHover {
+  background: var(--buttonYellowBrandHover);
+}
+
+.buttonYellowBrandHover {
+  background: var(--buttonYellowBrandHover);
+}
+
+.buttonYellowBrandPressed {
+  background: var(--buttonYellowBrandPressed);
+}
+
+.buttonSecondary {
+  background: var(--buttonSecondary);
+}
+
+.buttonSecondaryHover {
+  background: var(--buttonSecondaryHover);
+}
+
+.buttonSecondaryPressed {
+  background: var(--buttonSecondaryPressed);
+}
+
+.buttonWhite {
+  background: var(--buttonWhite);
+}
+
+.buttonWhiteHover {
+  background: var(--buttonSecondary);
+}
+
+.buttonWhitePressed {
+  background: var(--buttonWhitePressed);
+}
+
+.buttonSystemBlue {
+  background: var(--textSystemBlue);
+}
+
+.buttonBlack {
+  background: var(--buttonBlack);
+}
+
+.buttonBlackHover {
+  background: var(--buttonBlackHover);
+}
+
+.buttonBlackPressed {
+  background: var(--buttonBlackPressed);
+}
+
+.buttonTransparent {
+  background: var(--buttonTransparent);
+}

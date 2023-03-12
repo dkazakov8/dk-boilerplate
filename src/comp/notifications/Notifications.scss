@@ -1,0 +1,79 @@
+@import "mixins.scss";
+
+.notifications {
+  position: fixed;
+  top: 90px;
+  left: 16px;
+  right: 16px;
+
+  :global(.mobile) & {
+    top: 16px;
+  }
+}
+
+.notification {
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 340px;
+  padding-bottom: 8px;
+
+  :global(.mobile) & {
+    width: 100%;
+  }
+
+  .notificationInner {
+    padding: 12px;
+    border-radius: 16px;
+    background: var(--bgGray);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    word-break: break-word;
+
+    .icon {
+      font-size: 24px;
+      margin-right: 18px;
+    }
+
+    .message {
+      @include caption14Regular;
+      flex-grow: 1;
+      min-height: 24px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+
+    .close {
+      font-size: 24px;
+      color: var(--textTertiary);
+      transition: color 0.2s;
+      cursor: pointer;
+      margin-left: 18px;
+
+      &:hover {
+        color: var(--textMainBlack);
+      }
+    }
+  }
+
+  &.success {
+    color: var(--textSuccess);
+  }
+
+  &.error {
+    color: var(--textError);
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+
+  &.leaving {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,15 @@
+@import "mixins.scss";
+
+:global {
+  *[class^="rsg--preview"] {
+    padding: 0 !important;
+  }
+
+  .rsg--content-3 {
+    max-width: 1200px !important;
+  }
+
+  footer {
+    display: none !important;
+  }
+}
