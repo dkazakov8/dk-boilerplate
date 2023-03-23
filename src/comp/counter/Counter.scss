@@ -1,0 +1,28 @@
+@import "mixins.scss";
+
+.counterWrapper {
+  margin-top: 20px;
+
+  .counterTitle {
+    font-weight: 500;
+  }
+
+  .counter {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-top: 8px;
+
+    .value {
+      border: 1px solid #ccc;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 20px;
+      border-radius: 4px;
+    }
+
+    .button {
+      margin-left: 20px;
+    }
+  }
+}

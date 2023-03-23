@@ -4,29 +4,22 @@ import { TypeRoutesGenerator } from 'dk-react-mobx-globals';
 import { addNames } from 'utils/system/addNames';
 
 const routesObject = addNames({
-  catalog: {
+  first: {
+    name: 'first' as const,
     path: '/',
-    loader: loadable(() => import('pages/catalog/Extender')),
+    loader: loadable(() => import('pages/first/Extender')),
     params: {},
   },
-
-  // cart: {
-  //   path: '/cart',
-  //   loader: loadable(() => import('pages/cart/Extender')),
-  //   params: {},
-  //   beforeEnter: ({ store }: TypeGlobals) => {
-  //     if (store.user.isUnauthorized || !store.cart.cartShort?.items.length) {
-  //       return Promise.resolve({ route: routes.catalog });
-  //     }
-  //
-  //     return Promise.resolve();
-  //   },
-  //   beforeLeave: (globals: TypeGlobals) => {
-  //     if (!IS_CLIENT) return Promise.resolve();
-  //
-  //     return globals.actions.cart.getCartShort();
-  //   },
-  // },
+  second: {
+    name: 'second' as const,
+    path: '/second',
+    loader: loadable(() => import('pages/second/Extender')),
+    params: {},
+    before: () => {
+      // eslint-disable-next-line no-console
+      console.log(1);
+    },
+  },
 
   error404: {
     path: '/error404',

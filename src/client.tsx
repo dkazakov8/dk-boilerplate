@@ -4,8 +4,10 @@ import { hydrateRoot } from 'react-dom/client';
 // eslint-disable-next-line no-restricted-imports
 import _omitBy from 'lodash/omitBy';
 import { mergeObservableDeep, unescapeAllStrings } from 'dk-react-mobx-globals';
+import { runInAction } from 'mobx';
 
 import { App } from 'comp/app';
+import { transformers } from 'compSystem/transformers';
 import { StoreContext } from 'compSystem/StoreContext';
 import { createGlobals } from 'compSystem/createGlobals';
 import { initAutorun } from 'autorun';
@@ -27,11 +29,13 @@ const initialData = _omitBy(
   (value, key) => !Object.keys(globals.store).includes(key)
 );
 
-// let root: Root;
-
 void Promise.resolve()
   .then(() => loadableReady())
-  .then(() => mergeObservableDeep(globals.store, unescapeAllStrings(initialData)))
+  .then(() => {
+    runInAction(() => {
+      mergeObservableDeep(globals.store, unescapeAllStrings(initialData), transformers);
+    });
+  })
   .then(() => initAutorun(globals))
   .then(() => globals.actions.client.beforeRender())
   .then(() =>
@@ -45,11 +49,3 @@ void Promise.resolve()
       </StoreContext.Provider>
     )
   );
-// .then((r) => (root = r));
-
-// window.TEST_RERENDER = () =>
-//   root!.render(
-//     <StoreContext.Provider value={globals}>
-//       <App />
-//     </StoreContext.Provider>
-//   );

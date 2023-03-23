@@ -5,6 +5,7 @@ import { runInAction } from 'mobx';
 import { env } from 'env';
 import { TypeGlobals } from 'models';
 
+import { transformers } from './transformers';
 import { ConnectedComponent } from './ConnectedComponent';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -37,6 +38,7 @@ export class ModularStoresSetter extends ConnectedComponent<{
         logs={env.LOGS_STORE_SETTER}
         initialData={IS_CLIENT ? window.INITIAL_DATA || {} : {}}
         logsCanceledActions={env.LOGS_CANCELED_ACTIONS}
+        transformers={transformers}
       />
     );
   }

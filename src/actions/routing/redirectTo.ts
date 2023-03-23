@@ -3,6 +3,7 @@ import { redirectToGenerator, TypeRedirectToParams } from 'dk-react-mobx-globals
 import { routes } from 'routes';
 import { history } from 'utils';
 import { TypeAction } from 'models';
+import { transformers } from 'compSystem/transformers';
 
 export const redirectTo: TypeAction<TypeRedirectToParams<typeof routes>> = (globals, params) => {
   if (IS_CLIENT) {
@@ -18,5 +19,6 @@ export const redirectTo: TypeAction<TypeRedirectToParams<typeof routes>> = (glob
     routerStore: globals.store.router,
     routeError404: routes.error404,
     routeError500: routes.error500,
+    transformers,
   })(params);
 };

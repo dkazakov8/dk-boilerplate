@@ -6,6 +6,7 @@ import { Router } from 'compSystem/Router';
 import { Confirm } from 'comp/confirm';
 import { Notifications } from 'comp/notifications';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
+import { Layout } from 'comp/layout';
 
 import styles from './App.scss';
 
@@ -19,7 +20,9 @@ export class App extends ConnectedComponent {
     return (
       <>
         <div className={styles.app}>
-          <Router wrapperClassName={styles.router} />
+          <Layout>
+            <Router wrapperClassName={styles.router} />
+          </Layout>
         </div>
         <Modal />
         <Confirm />

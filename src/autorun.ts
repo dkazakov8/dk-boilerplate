@@ -7,6 +7,7 @@ import { excludeFalsy } from 'utils/tsUtils/excludeFalsy';
 import { printMeasures } from 'utils/system/printMeasures';
 import { messages } from 'utils/messages';
 import { routes } from 'routes';
+import { transformers } from 'compSystem/transformers';
 
 const actionsLogs = (globals: TypeGlobals) =>
   getActionsLogs({
@@ -14,6 +15,7 @@ const actionsLogs = (globals: TypeGlobals) =>
     isClient: IS_CLIENT,
     actionsLogs: globals.store.router.actionsLogs,
     routerStore: globals.store.router,
+    transformers,
   });
 
 function setPageTitle({ store, getLn }: TypeGlobals) {
@@ -57,7 +59,7 @@ function handlePrefetchPages({ store }: TypeGlobals) {
    *
    */
 
-  const prefetchable = [routes.catalog];
+  const prefetchable = [routes.first];
   const DELAY = 200;
   let loadTimeout: ReturnType<typeof setTimeout>;
 

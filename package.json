@@ -5,16 +5,21 @@
   "author": "Dmitry Kazakov",
   "license": "MIT",
   "scripts": {
-    "upd": "rm -rf ./node_modules&&pnpm i --prefer-offline",
     "first-run": "pnpm i&&cp example.dev.env .env&&cd ./tests&&pnpm i&& cd ../",
+    "upd": "rm -rf ./node_modules&&pnpm i --prefer-offline",
+
     "build": "node -r @swc-node/register -r dotenv/config ./_webpack/builder.ts",
     "start": "node -r dotenv/config ./build/server.js",
+
     "analyze:js": "eslint --ignore-path .formatignore --ext \".js,.ts,.tsx\" ./",
     "analyze:style": "stylelint --ignore-path .formatignore \"**/*.scss\"",
+
     "format:js": "eslint --ignore-path .formatignore --ext \".js,.ts,.tsx\" --fix",
     "format:style": "stylelint --ignore-path .formatignore --fix",
+
     "check-types": "tsc --project tsconfig-check.json",
     "check-types-precommit": "tsc --project tsconfig-precommit.json",
+
     "sg": "node -r @swc-node/register -r dotenv/config ./styleguide/start.ts"
   },
   "husky": {
@@ -55,11 +60,12 @@
     "dk-compare-env": "2.0.0",
     "dk-reload-server": "2.0.0",
     "dk-file-generator": "2.1.0",
-    "dk-webpack-config": "2.4.1",
-    "dk-react-mobx-globals": "2.1.17",
+    "dk-webpack-config": "2.4.2",
+    "dk-react-mobx-globals": "2.2.3",
     "dk-webpack-parallel-simple": "2.1.5",
     "@sentry/node": "7.37.2",
     "@swc-node/core": "1.9.2",
+    "@swc/core": "1.3.40",
     "@faker-js/faker": "7.6.0",
     "@sentry/tracing": "7.37.2",
     "@loadable/server": "5.15.2",

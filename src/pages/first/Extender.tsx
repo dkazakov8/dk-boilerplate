@@ -3,7 +3,7 @@ import { ModularStoresSetter } from 'compSystem/ModularStoresSetter';
 
 import modularStores from './store';
 import * as modularActions from './actions';
-import { Catalog } from './Catalog';
+import { First } from './First';
 
 const pageName = __dirname.split(PATH_SEP).pop() as string;
 
@@ -15,7 +15,7 @@ export default class Extender extends ConnectedComponent {
         stores={{ [pageName]: modularStores }}
         actions={{ [pageName]: modularActions }}
       >
-        <Catalog {...this.props} />
+        <First {...this.props} />
       </ModularStoresSetter>
     );
   }

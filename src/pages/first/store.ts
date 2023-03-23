@@ -6,5 +6,5 @@ export default class Store {
     makeAutoObservable(this);
   }
 
-  test = 1;
+  modularCounter = 0;
 }

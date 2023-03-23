@@ -10,6 +10,8 @@ import globalActions from 'actions';
 import * as staticStores from 'stores';
 import * as apiValidatorsTypes from 'validators/api';
 
+import { transformers } from './transformers';
+
 const apiValidators = _mapValues(apiValidatorsTypes, (value) => createCheckers(value));
 
 export function createGlobals(req?: TypeGlobals['req'], res?: TypeGlobals['res']) {
@@ -18,9 +20,10 @@ export function createGlobals(req?: TypeGlobals['req'], res?: TypeGlobals['res']
     res,
     api,
     request,
-    globalActions,
+    transformers,
     staticStores,
     apiValidators,
+    globalActions,
   });
 
   globals.getLn = getLn.bind(null, globals.store.ui.lnData);
