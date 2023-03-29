@@ -1,12 +1,14 @@
-import { autorun, IReactionDisposer } from 'mobx';
+import { IReactionDisposer } from 'mobx';
 import { Component } from 'react';
+
+import { transformers } from 'compSystem/transformers';
 
 export function appendAutorun(
   ctx: Component & { autorunDisposers?: Array<IReactionDisposer> },
   fn: () => void,
   options?: { throttleTimeout?: number }
 ) {
-  const disposer = autorun(fn, { delay: options?.throttleTimeout || 0 });
+  const disposer = transformers.autorun(fn, { delay: options?.throttleTimeout || 0 });
 
   if (!ctx.autorunDisposers) {
     Object.defineProperty(ctx, 'autorunDisposers', { value: [] });

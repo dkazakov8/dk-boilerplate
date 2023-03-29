@@ -1,5 +1,4 @@
-import { runInAction } from 'mobx';
-
+import { transformers } from 'compSystem/transformers';
 import { system } from 'const';
 import { TypeAction } from 'models';
 
@@ -15,13 +14,13 @@ export const confirmRemove: TypeAction<TypeParams> = ({ store }, { isConfirmed }
   // eslint-disable-next-line consistent-return
   return new Promise((resolve) => {
     if (confirm.isEntering) {
-      runInAction(() => {
+      transformers.batch(() => {
         confirm.isLeaving = true;
         confirm.isEntering = false;
       });
 
       return setTimeout(() => {
-        runInAction(() => {
+        transformers.batch(() => {
           store.ui.confirm = undefined;
         });
 

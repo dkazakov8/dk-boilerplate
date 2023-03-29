@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-handler-names */
 
-import { observable, runInAction } from 'mobx';
-
+import { transformers } from 'compSystem/transformers';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { Counter } from 'comp/counter';
 
@@ -13,7 +12,7 @@ const DELAY = 1000;
 export class Second extends ConnectedComponent {
   localTimeout?: ReturnType<typeof setTimeout> = undefined;
 
-  localState = observable({
+  localState = transformers.observable({
     localCounter: 0,
     isLoading: false,
   });
@@ -29,12 +28,12 @@ export class Second extends ConnectedComponent {
   }
 
   handleIncrease = () => {
-    runInAction(() => {
+    transformers.batch(() => {
       this.localState.isLoading = true;
     });
 
     this.localTimeout = setTimeout(() => {
-      runInAction(() => {
+      transformers.batch(() => {
         this.localState.localCounter += 1;
         this.localState.isLoading = false;
       });

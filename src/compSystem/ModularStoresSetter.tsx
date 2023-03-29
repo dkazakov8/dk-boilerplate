@@ -1,6 +1,5 @@
 import { createModularStoresSetter } from 'dk-react-mobx-globals';
 import { ReactNode } from 'react';
-import { runInAction } from 'mobx';
 
 import { env } from 'env';
 import { TypeGlobals } from 'models';
@@ -21,11 +20,11 @@ export class ModularStoresSetter extends ConnectedComponent<{
     const { store } = this.context;
 
     if (!store.ui.frontLoaded) {
-      runInAction(() => {
+      transformers.batch(() => {
         store.ui.frontLoaded = true;
       });
 
-      if (IS_CLIENT) document.body.classList.add('loaded');
+      document.body.classList.add('loaded');
     }
   }
 

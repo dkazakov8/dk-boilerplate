@@ -1,6 +1,6 @@
-import { autorun } from 'mobx';
 import { getPlainActions } from 'dk-react-mobx-globals';
 
+import { transformers } from 'compSystem/transformers';
 import { TypeGlobals } from 'models';
 import { createError } from 'utils/system/createError';
 import { errorsNames } from 'const';
@@ -9,7 +9,7 @@ export function waitActionsToBeCompleted(context: TypeGlobals) {
   let timout: ReturnType<typeof setTimeout>;
 
   return new Promise<void>((resolve, reject) => {
-    const disposer = autorun(() => {
+    const disposer = transformers.autorun(() => {
       /**
        * Actions are extendable, so have to loop every time
        *

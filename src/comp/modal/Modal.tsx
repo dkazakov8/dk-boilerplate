@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { createRef, MouseEventHandler, ReactNode } from 'react';
-import { observable, runInAction } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { system, testId } from 'const';
 import { BodyClass } from 'comp/bodyClass';
@@ -14,7 +14,7 @@ const shakingDuration = `${system.MODALS_SHAKING_TIMEOUT}ms`;
 const transitionDuration = `${system.MODALS_LEAVING_TIMEOUT}ms`;
 
 export class Modal extends ConnectedComponent {
-  localState = observable({ isLoaded: false });
+  localState = transformers.observable({ isLoaded: false });
 
   modalRef = createRef<HTMLDivElement>();
 
@@ -29,7 +29,7 @@ export class Modal extends ConnectedComponent {
     const { modal } = store.ui;
 
     if (modal?.component) {
-      runInAction(() => (this.localState.isLoaded = false));
+      transformers.batch(() => (this.localState.isLoaded = false));
 
       this.setBodyPadding();
 
@@ -73,7 +73,7 @@ export class Modal extends ConnectedComponent {
     return import(`./lib/${modal.component}`).then((comp) => {
       this.component = comp[modal.component];
 
-      runInAction(() => (this.localState.isLoaded = true));
+      transformers.batch(() => (this.localState.isLoaded = true));
 
       if (modal.shakeOnInit && !store.ui.isMobile) void actions.ui.modalShake();
     });

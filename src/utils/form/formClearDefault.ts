@@ -1,4 +1,4 @@
-import { runInAction } from 'mobx';
+import { transformers } from 'compSystem/transformers';
 
 import { getTypedKeys } from '../tsUtils/getTypedKeys';
 
@@ -10,7 +10,7 @@ export function formClearDefault<T>(formConfigOriginal: T) {
       // @ts-ignore
       getFormInputsConfig<typeof formConfigInStore>(formConfigInStore);
 
-    runInAction(() => {
+    transformers.batch(() => {
       getTypedKeys(formConfigWithoutSystem).forEach((name) => {
         // @ts-ignore
         formConfigInStore[name].value = formConfigOriginal[name].value;

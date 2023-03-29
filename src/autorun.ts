@@ -1,4 +1,4 @@
-import { autorun, IReactionDisposer, toJS } from 'mobx';
+import { IReactionDisposer } from 'mobx';
 import { getActionsLogs, loadComponentToConfig } from 'dk-react-mobx-globals';
 
 import { env } from 'env';
@@ -24,13 +24,13 @@ function setPageTitle({ store, getLn }: TypeGlobals) {
    *
    */
 
-  return autorun(() => {
+  return transformers.autorun(() => {
     document.title = store.ui.metaData?.title || getLn(messages.pageTitleSuffix);
   });
 }
 
 function setMobileOrDesktop({ store }: TypeGlobals) {
-  return autorun(() => {
+  return transformers.autorun(() => {
     // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     if (store.ui.screen.width < 1200) document.body.classList.add('mobile');
     else document.body.classList.remove('mobile');
@@ -47,7 +47,7 @@ function setScrollTop({ actions }: TypeGlobals) {
 
 function handlePageLoaded({ store }: TypeGlobals) {
   window.addEventListener('load', () => {
-    const currentRoute = toJS(store.router.currentRoute);
+    const currentRoute = transformers.toJS(store.router.currentRoute);
 
     if (env.LOGS_MEASURES) printMeasures({ currentRoute });
   });
@@ -63,7 +63,7 @@ function handlePrefetchPages({ store }: TypeGlobals) {
   const DELAY = 200;
   let loadTimeout: ReturnType<typeof setTimeout>;
 
-  return autorun(() => {
+  return transformers.autorun(() => {
     if (store.ui.frontLoaded) {
       clearTimeout(loadTimeout);
       loadTimeout = setTimeout(() => {

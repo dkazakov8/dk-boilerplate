@@ -1,7 +1,6 @@
-import { runInAction } from 'mobx';
-
+import { transformers } from 'compSystem/transformers';
 import { TypeAnyInput } from 'models';
 
 export const updateInputConfig = (inputConfig: TypeAnyInput) => (params: Partial<TypeAnyInput>) => {
-  runInAction(() => Object.assign(inputConfig, params));
+  transformers.batch(() => Object.assign(inputConfig, params));
 };

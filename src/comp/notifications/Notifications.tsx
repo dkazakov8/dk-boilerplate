@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { createRef } from 'react';
-import { runInAction } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { appendAutorun, generateArray } from 'utils';
 import { TypeNotification } from 'models';
@@ -52,7 +52,7 @@ class Notification extends ConnectedComponent<PropsNotification> {
 
     if (store.ui.screen.width == null || !notificationObservable) return;
 
-    runInAction(() => {
+    transformers.batch(() => {
       notificationObservable.height = this.ref.current!.offsetHeight;
     });
   };

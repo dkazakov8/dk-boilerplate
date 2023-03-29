@@ -1,8 +1,8 @@
 import _omit from 'lodash/omit';
 import cn from 'classnames';
 import { createRef } from 'react';
-import { observable, runInAction } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { generateId } from 'utils';
 
@@ -26,7 +26,7 @@ const RIPPLE_DURATION = 600;
 
 export class Ripple extends ConnectedComponent<PropsRipple> {
   rippleRef = createRef<HTMLDivElement>();
-  localState = observable({
+  localState = transformers.observable({
     ripples: [] as Array<TypeRipple>,
     eventIsAdded: false,
   });
@@ -45,7 +45,7 @@ export class Ripple extends ConnectedComponent<PropsRipple> {
     const alreadyUsedIds = ripples.map(({ id }) => id);
     const id = generateId({ excludedIds: alreadyUsedIds });
 
-    runInAction(() => {
+    transformers.batch(() => {
       ripples.push({
         id,
         top: event.clientY - rippleContainer.top - halfSize,
@@ -58,7 +58,7 @@ export class Ripple extends ConnectedComponent<PropsRipple> {
 
           if (targetRippleIndex === -1) return;
 
-          runInAction(() => ripples.splice(targetRippleIndex, 1));
+          transformers.batch(() => ripples.splice(targetRippleIndex, 1));
         }, RIPPLE_DURATION),
       });
     });

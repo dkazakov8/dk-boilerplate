@@ -1,6 +1,6 @@
 import { createRouterStore } from 'dk-react-mobx-globals';
-import { computed, makeObservable, observable } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { routes } from 'routes';
 
 // eslint-disable-next-line import/no-default-export
@@ -8,14 +8,14 @@ export default class RouterStore extends createRouterStore({ routes, isClient: I
   constructor() {
     super();
 
-    makeObservable(this, {
-      actionsLogs: observable,
-      currentRoute: observable,
-      routesHistory: observable,
+    transformers.classToObservableManual(this, {
+      actionsLogs: transformers.observable,
+      currentRoute: transformers.observable,
+      routesHistory: transformers.observable,
 
-      previousRoute: computed,
-      lastActionsLog: computed,
-      previousRoutePathname: computed,
+      previousRoute: transformers.computed,
+      lastActionsLog: transformers.computed,
+      previousRoutePathname: transformers.computed,
     });
   }
 }

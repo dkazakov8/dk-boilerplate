@@ -3,8 +3,8 @@
 import _mapValues from 'lodash/mapValues';
 import _omit from 'lodash/omit';
 import { FormEvent, ReactNode } from 'react';
-import { runInAction } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { TypeFormConfig, TypeFormSubmit, TypeInputTextConfig, TypeAnyInput } from 'models';
 import { getFormInputsConfig, getNotValidFieldsIds, scrollToFirstElement } from 'utils';
@@ -50,14 +50,14 @@ export class Form<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsF
 
     if (formConfig.SYSTEM.isSubmitting || !onSubmit) return Promise.resolve();
 
-    runInAction(() => (formConfig.SYSTEM.isSubmitting = true));
+    transformers.batch(() => (formConfig.SYSTEM.isSubmitting = true));
 
     const formConfigWithoutSystem = _omit(formConfig, ['SYSTEM', 'submit']);
     const formInputsValues = _mapValues(formConfigWithoutSystem, ({ value }) => value);
     const notValidFieldsIds = getNotValidFieldsIds({ formConfig });
 
     if (notValidFieldsIds.length) {
-      runInAction(() => (formConfig.SYSTEM.isSubmitting = false));
+      transformers.batch(() => (formConfig.SYSTEM.isSubmitting = false));
 
       return store.ui.modal
         ? actions.ui.modalShake()
@@ -67,10 +67,10 @@ export class Form<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsF
     // @ts-ignore
     return onSubmit(formInputsValues)
       .then(() => {
-        runInAction(() => (formConfig.SYSTEM.isSubmitting = false));
+        transformers.batch(() => (formConfig.SYSTEM.isSubmitting = false));
       })
       .catch(() => {
-        runInAction(() => (formConfig.SYSTEM.isSubmitting = false));
+        transformers.batch(() => (formConfig.SYSTEM.isSubmitting = false));
       });
   };
 

@@ -1,9 +1,9 @@
-import { makeAutoObservable } from 'mobx';
+import { transformers } from 'compSystem/transformers';
 
 // eslint-disable-next-line import/no-default-export
 export default class StoreCounter {
   constructor() {
-    makeAutoObservable(this);
+    transformers.classToObservable(this);
   }
 
   globalCounter = 0;

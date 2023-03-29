@@ -1,6 +1,6 @@
 import _size from 'lodash/size';
-import { runInAction } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { TypeGlobals } from 'models';
 
 export const handleQuery = (globals: TypeGlobals) => {
@@ -9,7 +9,7 @@ export const handleQuery = (globals: TypeGlobals) => {
   if (!req) return;
 
   if (_size(req.query) > 0) {
-    runInAction(() => {
+    transformers.batch(() => {
       req.query = {};
       req.originalUrl = req.originalUrl.replace(/\?.+/, '');
     });

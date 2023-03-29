@@ -1,5 +1,4 @@
-import { runInAction } from 'mobx';
-
+import { transformers } from 'compSystem/transformers';
 import { system } from 'const';
 import { TypeAction } from 'models';
 
@@ -10,14 +9,14 @@ export const modalRemove: TypeAction = ({ store }) => {
 
   // eslint-disable-next-line consistent-return
   return new Promise((resolve) => {
-    runInAction(() => {
+    transformers.batch(() => {
       modal.isLeaving = true;
     });
 
     return setTimeout(() => {
       const params = store.ui.modal?.params;
 
-      runInAction(() => (store.ui.modal = undefined));
+      transformers.batch(() => (store.ui.modal = undefined));
 
       if (modal.onClose && !modal.preventOnClose) modal.onClose(params);
 

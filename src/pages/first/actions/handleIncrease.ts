@@ -1,5 +1,4 @@
-import { runInAction } from 'mobx';
-
+import { transformers } from 'compSystem/transformers';
 import { TypeAction } from 'models';
 import { promiseDelay } from 'utils';
 
@@ -9,7 +8,7 @@ export const handleIncrease: TypeAction = ({ store }) => {
   return Promise.resolve()
     .then(() => promiseDelay(DELAY))
     .then(() => {
-      runInAction(() => {
+      transformers.batch(() => {
         store.pages.first.modularCounter += 1;
       });
     });

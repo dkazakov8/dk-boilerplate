@@ -1,11 +1,10 @@
-import { autorun } from 'mobx';
-
+import { transformers } from 'compSystem/transformers';
 import { TypeAnyInput } from 'models';
 
 import { updateInputConfig } from './updateInputConfig';
 
 export const clearErrorsOnDisabledChange = (inputConfig: TypeAnyInput) => {
-  return autorun(() => {
+  return transformers.autorun(() => {
     if (inputConfig.disabled === true && inputConfig.errors.length)
       updateInputConfig(inputConfig)({ errors: [] });
   });

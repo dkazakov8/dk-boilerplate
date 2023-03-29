@@ -1,6 +1,6 @@
 import _values from 'lodash/values';
-import { runInAction } from 'mobx';
 
+import { transformers } from 'compSystem/transformers';
 import { Button } from 'comp/button';
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { appendAutorun, getFormInputsConfig } from 'utils';
@@ -60,7 +60,7 @@ export class Submit<T extends TypeFormConfig<T>> extends ConnectedComponent<Prop
       }
     );
 
-    runInAction(() => (inputConfig.disabled = isDisabled));
+    transformers.batch(() => (inputConfig.disabled = isDisabled));
   };
 
   updateInputConfig = updateInputConfig(this.props.inputConfig as any);

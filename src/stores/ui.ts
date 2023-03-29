@@ -1,8 +1,8 @@
-import { makeAutoObservable } from 'mobx';
 import { TypeTranslations } from 'dk-localize';
 import { TypeThemes } from 'dk-file-generator/dist/src/plugins/theme/types';
 import UAParser from 'ua-parser-js';
 
+import { transformers } from 'compSystem/transformers';
 import { themes } from 'const';
 import { getTypedKeys } from 'utils';
 import { TypeConfirm, TypeMetaData, TypeModal, TypeNotification } from 'models';
@@ -25,7 +25,7 @@ export default class StoreUi {
   parsedUA: UAParser.IResult | null = null;
 
   constructor() {
-    makeAutoObservable(this);
+    transformers.classToObservable(this);
   }
 
   get isMobile() {

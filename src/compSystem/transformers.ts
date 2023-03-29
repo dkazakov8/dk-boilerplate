@@ -1,3 +1,21 @@
-import { action, autorun, observable, runInAction } from 'mobx';
+import {
+  action,
+  autorun,
+  observable,
+  runInAction,
+  toJS,
+  makeAutoObservable,
+  computed,
+  makeObservable,
+} from 'mobx';
 
-export const transformers = { action, batch: runInAction, autorun, observable };
+export const transformers = {
+  toJS,
+  batch: runInAction,
+  action,
+  autorun,
+  computed,
+  observable,
+  classToObservable: makeAutoObservable,
+  classToObservableManual: makeObservable,
+};
