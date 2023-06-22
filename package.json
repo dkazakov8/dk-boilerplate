@@ -34,15 +34,16 @@
     "last 5 FirefoxAndroid versions"
   ],
   "dependencies": {
-    "dk-request": "3.0.15",
-    "dk-localize": "3.0.15",
-    "dk-bff-server": "3.0.15",
-    "dk-compare-env": "3.0.15",
-    "dk-reload-server": "3.0.15",
-    "dk-file-generator": "3.0.15",
+    "dk-request": "3.0.16",
+    "dk-localize": "3.0.16",
+    "dk-bff-server": "3.0.16",
+    "dk-compare-env": "3.0.16",
+    "dk-reload-server": "3.0.16",
+    "dk-file-generator": "3.0.16",
     "dk-webpack-config": "2.4.2",
-    "dk-react-mobx-globals": "3.0.15",
-    "dk-webpack-parallel-simple": "3.0.15",
+    "dk-react-mobx-globals": "3.0.16",
+    "dk-webpack-parallel-simple": "3.0.16",
+    "dk-react-mobx-globals-logger": "3.0.16",
     "@sentry/node": "7.56.0",
     "@swc-node/core": "1.9.2",
     "@swc/core": "1.3.40",
@@ -68,7 +69,7 @@
     "ts-interface-checker": "1.0.2"
   },
   "devDependencies": {
-    "dk-eslint-config": "3.0.15",
+    "dk-eslint-config": "3.0.16",
     "husky": "8.0.3",
     "node-dev": "7.4.3",
     "lint-staged": "13.0.3",

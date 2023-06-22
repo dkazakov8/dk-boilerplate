@@ -1,5 +1,6 @@
 import { IReactionDisposer } from 'mobx';
-import { getActionsLogs, loadComponentToConfig } from 'dk-react-mobx-globals';
+import { loadComponentToConfig } from 'dk-react-mobx-globals';
+import { getActionsLogs } from 'dk-react-mobx-globals-logger';
 
 import { env } from 'env';
 import { TypeGlobals } from 'models';

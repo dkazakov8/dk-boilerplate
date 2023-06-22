@@ -1,4 +1,4 @@
-import { ActionsLogger as ActionsLoggerRaw } from 'dk-react-mobx-globals/dist/actionsLogger/ActionsLogger';
+import { ActionsLogger as ActionsLoggerRaw } from 'dk-react-mobx-globals-logger';
 
 import { transformers } from './transformers';
 import { ConnectedComponent } from './ConnectedComponent';
