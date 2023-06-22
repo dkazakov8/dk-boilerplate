@@ -1,40 +1,6 @@
 {
-  "include": [
-    "env.ts",
-    "paths.ts",
-    "styleguide",
-    "src",
-    "_webpack"
-  ],
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "lib": ["DOM", "ESNext"],
-    "jsx": "react-jsx",
-    "outDir": "build",
-    "target": "es2019",
-    "module": "esnext",
-    "noEmit": true,
-    "strict": true,
-    "allowJs": true,
-    "baseUrl": ".",
-    "checkJs": false,
-    "sourceMap": false,
-    "skipLibCheck": true,
-    "declaration": false,
-    "declarationMap": false,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "keyofStringsOnly": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "useDefineForClassFields": true,
-    "allowSyntheticDefaultImports": true,
-    "paths": {
-      "*": [
-        "*",
-        "src/*",
-        "server/*"
-      ]
-    }
+    "isolatedModules": true
   }
 }

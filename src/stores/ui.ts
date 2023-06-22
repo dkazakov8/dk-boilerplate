@@ -1,6 +1,5 @@
 import { TypeTranslations } from 'dk-localize';
 import { TypeThemes } from 'dk-file-generator/dist/src/plugins/theme/types';
-import UAParser from 'ua-parser-js';
 
 import { transformers } from 'compSystem/transformers';
 import { themes } from 'const';
@@ -22,7 +21,6 @@ export default class StoreUi {
   modal?: TypeModal = undefined;
   confirm?: TypeConfirm = undefined;
   notifications: Array<TypeNotification> = [];
-  parsedUA: UAParser.IResult | null = null;
 
   constructor() {
     transformers.classToObservable(this);
@@ -30,13 +28,5 @@ export default class StoreUi {
 
   get isMobile() {
     return IS_CLIENT && this.screen.width > 0 && document.body.classList.contains('mobile');
-  }
-
-  get isAndroid() {
-    return this.isMobile && document.body.classList.contains('android');
-  }
-
-  get isIphone() {
-    return this.isMobile && document.body.classList.contains('iphone');
   }
 }

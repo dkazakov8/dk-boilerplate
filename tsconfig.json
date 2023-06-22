@@ -12,6 +12,7 @@
     "outDir": "build",
     "target": "es2019",
     "module": "esnext",
+    "ignoreDeprecations": "5.0",
     "noEmit": true,
     "strict": true,
     "allowJs": true,
@@ -29,7 +30,6 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["google.maps"],
     "paths": {
       "*": [
         "*",

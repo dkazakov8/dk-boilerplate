@@ -5,6 +5,7 @@
   "author": "Dmitry Kazakov",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "first-run": "pnpm i&&cp example.dev.env .env&&cd ./tests&&pnpm i&& cd ../",
     "upd": "rm -rf ./node_modules&&pnpm i --prefer-offline",
 
@@ -22,11 +23,6 @@
 
     "sg": "node -r @swc-node/register -r dotenv/config ./styleguide/start.ts"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "set -e&&yarn check-types-precommit&&lint-staged"
-    }
-  },
   "browserslist": [
     "iOS >= 11",
     "last 5 Edge versions",
@@ -37,72 +33,52 @@
     "last 5 ChromeAndroid versions",
     "last 5 FirefoxAndroid versions"
   ],
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "webpack",
-        "@swc/core"
-      ],
-      "allowedVersions": {
-        "react": "*",
-        "react-dom": "*",
-        "@types/react": "*"
-      }
-    }
-  },
-  "resolutions": {
-    "@swc-node/core": "1.9.2"
-  },
   "dependencies": {
-    "dk-request": "2.1.6",
-    "dk-localize": "2.0.2",
-    "dk-bff-server": "2.2.1",
-    "dk-compare-env": "2.0.0",
-    "dk-reload-server": "2.0.0",
-    "dk-file-generator": "2.1.0",
+    "dk-request": "3.0.15",
+    "dk-localize": "3.0.15",
+    "dk-bff-server": "3.0.15",
+    "dk-compare-env": "3.0.15",
+    "dk-reload-server": "3.0.15",
+    "dk-file-generator": "3.0.15",
     "dk-webpack-config": "2.4.2",
-    "dk-react-mobx-globals": "2.2.3",
-    "dk-webpack-parallel-simple": "2.1.5",
-    "@sentry/node": "7.37.2",
+    "dk-react-mobx-globals": "3.0.15",
+    "dk-webpack-parallel-simple": "3.0.15",
+    "@sentry/node": "7.56.0",
     "@swc-node/core": "1.9.2",
     "@swc/core": "1.3.40",
-    "@faker-js/faker": "7.6.0",
-    "@sentry/tracing": "7.37.2",
-    "@loadable/server": "5.15.2",
-    "@swc-node/register": "1.5.4",
-    "@loadable/component": "5.15.2",
-    "@sentry/integrations": "7.37.2",
-    "mobx": "6.8.0",
+    "@sentry/tracing": "7.56.0",
+    "@loadable/server": "5.15.3",
+    "@swc-node/register": "1.6.6",
+    "@loadable/component": "5.15.3",
+    "@sentry/integrations": "7.56.0",
+    "mobx": "6.9.0",
     "chalk": "4.1.2",
-    "axios": "0.25.0",
+    "axios": "1.4.0",
     "react": "18.2.0",
-    "dotenv": "10.0.0",
+    "dotenv": "16.3.1",
     "history": "5.3.0",
     "lodash": "4.17.21",
     "classnames": "2.3.2",
     "mobx-react": "7.6.0",
     "react-dom": "18.2.0",
-    "typescript": "4.7.4",
+    "typescript": "5.0.4",
     "prop-types": "15.8.1",
     "better-spawn": "1.0.4",
-    "browserslist": "4.21.5",
-    "ua-parser-js": "1.0.32",
     "react-styleguidist": "13.1.1",
     "ts-interface-checker": "1.0.2"
   },
   "devDependencies": {
-    "dk-eslint-config": "2.0.2",
-    "husky": "4.3.8",
+    "dk-eslint-config": "3.0.15",
+    "husky": "8.0.3",
     "node-dev": "7.4.3",
     "lint-staged": "13.0.3",
-    "@types/ws": "8.5.3",
-    "@types/node": "15.0.0",
-    "@types/react": "18.0.28",
-    "@types/express": "4.17.14",
-    "@types/lodash": "4.14.191",
+    "@types/ws": "8.5.5",
+    "@types/node": "20.3.1",
+    "@types/react": "18.2.13",
+    "@types/express": "4.17.17",
+    "@types/lodash": "4.14.195",
     "@types/classnames": "2.3.0",
-    "@types/react-dom": "18.0.11",
-    "@types/ua-parser-js": "0.7.36",
+    "@types/react-dom": "18.2.6",
     "@types/loadable__server": "5.12.6",
     "@types/loadable__component": "5.13.4"
   }

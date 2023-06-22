@@ -13,4 +13,3 @@ export * from './parseQuery';
 export * from './setScreenSize';
 export * from './setScrollTop';
 export * from './setTheme';
-export * from './setUserAgent';

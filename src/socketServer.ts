@@ -25,7 +25,7 @@ const parseMessage = (data: string): TypeSocketClientEvent | null => {
 export function createSocketServer(server: http.Server | https.Server) {
   return;
 
-  const wss = new WebSocketServer<WebSocket & { isAlive: boolean }>({ server, path: '/ws' });
+  const wss = new WebSocketServer({ server, path: '/ws' });
 
   wss.on('connection', (ws) => {
     ws.on('error', (error) => console.error(error));
