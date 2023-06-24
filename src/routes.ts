@@ -37,4 +37,4 @@ const routesObject = addNames({
 
 export const routes = routesObject as TypeRoutesGenerator<typeof routesObject>;
 
-export type TypeRouteValues = typeof routes[keyof typeof routes];
+export type TypeRouteValues = (typeof routes)[keyof typeof routes];

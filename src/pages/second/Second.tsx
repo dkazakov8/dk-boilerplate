@@ -72,7 +72,9 @@ export class Second extends ConnectedComponent {
           isLoading={actions.counter.handleIncrease.state.isExecuting}
           onIncrease={actions.counter.handleIncrease}
         />
-        <div className={styles.sum}>Sum of all available counters: {this.sum}</div>
+        <div className={styles.sum}>
+          {getLn(messages.sum)} {this.sum}
+        </div>
       </div>
     );
   }

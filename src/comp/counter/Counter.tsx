@@ -7,12 +7,15 @@ type PropsCounter = {
   value: number;
   title: string;
   isLoading: boolean;
+
   onIncrease: () => void;
 };
 
 export class Counter extends ConnectedComponent<PropsCounter> {
   render() {
     const { value, title, isLoading, onIncrease } = this.props;
+
+    const text = 'Increase';
 
     return (
       <div className={styles.counterWrapper}>
@@ -26,7 +29,7 @@ export class Counter extends ConnectedComponent<PropsCounter> {
             onClick={onIncrease}
             isLoading={isLoading}
           >
-            Increase
+            {text}
           </Button>
         </div>
       </div>

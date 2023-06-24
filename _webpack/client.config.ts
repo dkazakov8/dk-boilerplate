@@ -39,6 +39,7 @@ export default createClientConfig({
   sassExclude: [paths.themes, path.resolve(paths.styles, 'global.scss')],
   speedMeasure: env.BUILD_MEASURE,
   templatePath: path.resolve(paths.source, 'templates/template.html'),
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   defineParams: { 'process.env': _pick(env, allowedClientKeys) },
   browserslist: JSON.parse(fs.readFileSync(paths.package, 'utf-8')).browserslist,
   filenameHash: env.FILENAME_HASH,

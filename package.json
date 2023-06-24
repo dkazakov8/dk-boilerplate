@@ -34,16 +34,16 @@
     "last 5 FirefoxAndroid versions"
   ],
   "dependencies": {
-    "dk-request": "3.1.1",
-    "dk-localize": "3.1.1",
-    "dk-bff-server": "3.1.1",
-    "dk-compare-env": "3.1.1",
-    "dk-reload-server": "3.1.1",
-    "dk-file-generator": "3.1.1",
-    "dk-webpack-config": "3.1.1",
-    "dk-react-mobx-globals": "3.1.1",
-    "dk-webpack-parallel-simple": "3.1.1",
-    "dk-react-mobx-globals-logger": "3.1.1",
+    "dk-request": "3.1.7",
+    "dk-localize": "3.1.7",
+    "dk-bff-server": "3.1.7",
+    "dk-compare-env": "3.1.7",
+    "dk-reload-server": "3.1.7",
+    "dk-file-generator": "3.1.7",
+    "dk-webpack-config": "3.1.7",
+    "dk-react-mobx-globals": "3.1.7",
+    "dk-webpack-parallel-simple": "3.1.7",
+    "dk-react-mobx-globals-logger": "3.1.7",
     "@sentry/node": "7.56.0",
     "@swc-node/core": "1.10.4",
     "@swc/core": "1.3.66",
@@ -62,14 +62,14 @@
     "classnames": "2.3.2",
     "mobx-react": "7.6.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.4",
+    "typescript": "5.1.3",
     "prop-types": "15.8.1",
     "better-spawn": "1.0.4",
     "react-styleguidist": "13.1.1",
     "ts-interface-checker": "1.0.2"
   },
   "devDependencies": {
-    "dk-eslint-config": "3.1.1",
+    "dk-eslint-config": "3.1.7",
     "husky": "8.0.3",
     "node-dev": "7.4.3",
     "lint-staged": "13.0.3",
@@ -82,5 +82,9 @@
     "@types/react-dom": "18.2.6",
     "@types/loadable__server": "5.12.6",
     "@types/loadable__component": "5.13.4"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "^pnpm@8.6.3"
 }
