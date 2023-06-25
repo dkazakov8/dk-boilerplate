@@ -21,7 +21,7 @@ export class App extends ConnectedComponent {
       <>
         <div className={styles.app}>
           <Layout>
-            <Router wrapperClassName={styles.router} />
+            <Router />
           </Layout>
         </div>
         <Modal />

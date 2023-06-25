@@ -42,35 +42,38 @@ dependencies:
     specifier: 2.3.2
     version: registry.npmjs.org/classnames@2.3.2
   dk-bff-server:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-bff-server@3.1.7
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-bff-server@3.1.11
   dk-compare-env:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-compare-env@3.1.7
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-compare-env@3.1.11
   dk-file-generator:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-file-generator@3.1.7(typescript@5.1.3)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-file-generator@3.1.11(typescript@5.1.3)
   dk-localize:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-localize@3.1.7
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-localize@3.1.11
+  dk-mobx-restore-state:
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-mobx-restore-state@3.1.11
   dk-react-mobx-globals:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-react-mobx-globals@3.1.7(dk-localize@3.1.7)(dk-request@3.1.7)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-react-mobx-globals@3.1.11(dk-localize@3.1.11)(dk-mobx-restore-state@3.1.11)(dk-request@3.1.11)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
   dk-react-mobx-globals-logger:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-react-mobx-globals-logger@3.1.7(dk-react-mobx-globals@3.1.7)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-react-mobx-globals-logger@3.1.11(dk-react-mobx-globals@3.1.11)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
   dk-reload-server:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-reload-server@3.1.7
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-reload-server@3.1.11
   dk-request:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-request@3.1.7(ts-interface-checker@1.0.2)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-request@3.1.11(ts-interface-checker@1.0.2)
   dk-webpack-config:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-webpack-config@3.1.7(@swc/core@1.3.66)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-webpack-config@3.1.11(@swc/core@1.3.66)
   dk-webpack-parallel-simple:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-webpack-parallel-simple@3.1.7(@swc-node/register@1.6.6)(webpack@5.88.0)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-webpack-parallel-simple@3.1.11(@swc-node/register@1.6.6)(webpack@5.88.0)
   dotenv:
     specifier: 16.3.1
     version: registry.npmjs.org/dotenv@16.3.1
@@ -134,8 +137,8 @@ devDependencies:
     specifier: 8.5.5
     version: registry.npmjs.org/@types/ws@8.5.5
   dk-eslint-config:
-    specifier: 3.1.7
-    version: registry.npmjs.org/dk-eslint-config@3.1.7(typescript@5.1.3)
+    specifier: 3.1.11
+    version: registry.npmjs.org/dk-eslint-config@3.1.11(typescript@5.1.3)
   husky:
     specifier: 8.0.3
     version: registry.npmjs.org/husky@8.0.3
@@ -1846,6 +1849,9 @@ packages:
     engines: {node: '>=8'}
     peerDependencies:
       webpack: '>=4.6.0'
+    peerDependenciesMeta:
+      webpack:
+        optional: true
     dependencies:
       make-dir: registry.npmjs.org/make-dir@3.1.0
       webpack: registry.npmjs.org/webpack@5.88.0(@swc/core@1.3.66)(webpack-cli@5.1.4)
@@ -5024,10 +5030,10 @@ packages:
     dependencies:
       path-type: registry.npmjs.org/path-type@4.0.0
 
-  registry.npmjs.org/dk-bff-server@3.1.7:
-    resolution: {integrity: sha512-edQe7J+nntLrXDzZLuUZiDZDhWLpuxERzRq63ygxcZNxiFqHJu0EqDb3oynyFK/lTg2hOz3zeMwuxPfL7r4v4Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-bff-server/-/dk-bff-server-3.1.7.tgz}
+  registry.npmjs.org/dk-bff-server@3.1.11:
+    resolution: {integrity: sha512-IjjpyJ7Zd+oe3ggNZcluLyX9eRKwU6H4ln8c6x+G9t1e7f/sygaSFTgtw4u2Gw/l/RGd01H7UAcgZCs8ZZQIvQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-bff-server/-/dk-bff-server-3.1.11.tgz}
     name: dk-bff-server
-    version: 3.1.7
+    version: 3.1.11
     engines: {node: '>=16.0.0'}
     dependencies:
       body-parser: registry.npmjs.org/body-parser@1.20.2
@@ -5040,35 +5046,35 @@ packages:
       - supports-color
     dev: false
 
-  registry.npmjs.org/dk-checker-remove-extraneous@3.1.7:
-    resolution: {integrity: sha512-IsjUJUWZQ/2FHxLudaxQVrcGSlSa8WLE9F1S/qa4pmxFj3CJIXO56LkXgr/yF0E871245rMiJXB1H2rg7TMY6A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-checker-remove-extraneous/-/dk-checker-remove-extraneous-3.1.7.tgz}
+  registry.npmjs.org/dk-checker-remove-extraneous@3.1.11:
+    resolution: {integrity: sha512-SXjenv+rYGHVJ8OnZ3aEPE4R0VzrvQGLobs3Fd9ueVwuWqV3gAa3Gs8j+TUA9B2Cp4boqkjO/pdqF9tZINTJ4w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-checker-remove-extraneous/-/dk-checker-remove-extraneous-3.1.11.tgz}
     name: dk-checker-remove-extraneous
-    version: 3.1.7
+    version: 3.1.11
     dependencies:
       lodash.get: registry.npmjs.org/lodash.get@4.4.2
       lodash.unset: registry.npmjs.org/lodash.unset@4.5.2
     dev: false
 
-  registry.npmjs.org/dk-compare-env@3.1.7:
-    resolution: {integrity: sha512-lCjPPLU8roA102ezhVyl0vSU4Z6g2IZnVcm3nJRa5FCkFXjCdX3sFynKPuVCKqQTI2AnurXoPkSs7NuJzBZkzw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-compare-env/-/dk-compare-env-3.1.7.tgz}
+  registry.npmjs.org/dk-compare-env@3.1.11:
+    resolution: {integrity: sha512-x69minjPtL4QfsQKf9nhVDeEEwpTgjyk/Fuec8lcI9NNSlZoYXuyxU+JeWZqCw2UoLBIrW54rJKivcb+ejZNQw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-compare-env/-/dk-compare-env-3.1.11.tgz}
     name: dk-compare-env
-    version: 3.1.7
+    version: 3.1.11
     engines: {node: '>=16.0.0'}
     dependencies:
       dotenv: registry.npmjs.org/dotenv@16.3.1
     dev: false
 
-  registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.7:
-    resolution: {integrity: sha512-dx8XAhTYyrVRkbkuXtQsx0iWaOGnKc9CJPNu0RQQKtcI0AJeTB+nbskoUoCB7qSuZf3X7vhLE16GKyQkwGttzQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-conditional-aggregate-webpack-plugin/-/dk-conditional-aggregate-webpack-plugin-3.1.7.tgz}
+  registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.11:
+    resolution: {integrity: sha512-F6Mvw7+0eh6QPJ4PXNgA85CGbYcm8nCcimPNUAyM+EJAtznWQo2Hepr+5qpAUK1TBCm9k4PNRO8B6k//omcR4Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-conditional-aggregate-webpack-plugin/-/dk-conditional-aggregate-webpack-plugin-3.1.11.tgz}
     name: dk-conditional-aggregate-webpack-plugin
-    version: 3.1.7
+    version: 3.1.11
     dev: false
 
-  registry.npmjs.org/dk-eslint-config@3.1.7(typescript@5.1.3):
-    resolution: {integrity: sha512-gwC25xruffsQgbMn4ntgk1da8V4nIrmtoZEG0T/KVKDqsU6Eer4GOsOc/B2YSmRAyPl+E1KY6TdZDMVvrBIH5A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-eslint-config/-/dk-eslint-config-3.1.7.tgz}
-    id: registry.npmjs.org/dk-eslint-config/3.1.7
+  registry.npmjs.org/dk-eslint-config@3.1.11(typescript@5.1.3):
+    resolution: {integrity: sha512-PCUugzMu43D1Z6R2eTnx0c1KNak2o6Jb23ALLiR7QQuntXXGnFYcvvZqlXirGkes+PmNJhI6yJWvSxb1/z+8/w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-eslint-config/-/dk-eslint-config-3.1.11.tgz}
+    id: registry.npmjs.org/dk-eslint-config/3.1.11
     name: dk-eslint-config
-    version: 3.1.7
+    version: 3.1.11
     dependencies:
       '@types/eslint': registry.npmjs.org/@types/eslint@8.40.2
       '@types/eslint-plugin-prettier': registry.npmjs.org/@types/eslint-plugin-prettier@3.1.0
@@ -5093,11 +5099,11 @@ packages:
       - typescript
     dev: true
 
-  registry.npmjs.org/dk-file-generator@3.1.7(typescript@5.1.3):
-    resolution: {integrity: sha512-/jeio+ZQn6ck5GDooLQXh+F0ddrNdR6ZLGDJOM4eS3qODN2N7gQuecYgLWiXq6ZnX9LUKBBmM3toWrr5qOJnAg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-file-generator/-/dk-file-generator-3.1.7.tgz}
-    id: registry.npmjs.org/dk-file-generator/3.1.7
+  registry.npmjs.org/dk-file-generator@3.1.11(typescript@5.1.3):
+    resolution: {integrity: sha512-SQMJw+hX4xTvclj1Pi4/Uq8iaOt/iuS3W9FIo8MEqrpnbLvkOV6f6srqe9e3X+WjAf40kwhI3Zpw/tYB6tGSdg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-file-generator/-/dk-file-generator-3.1.11.tgz}
+    id: registry.npmjs.org/dk-file-generator/3.1.11
     name: dk-file-generator
-    version: 3.1.7
+    version: 3.1.11
     engines: {node: '>=16.0.0'}
     peerDependencies:
       typescript: '*'
@@ -5108,66 +5114,74 @@ packages:
       typescript: registry.npmjs.org/typescript@5.1.3
     dev: false
 
-  registry.npmjs.org/dk-localize@3.1.7:
-    resolution: {integrity: sha512-34U7QXj77cJzIBip3gpp5z7nslTaUhjF5dGqwDQMbFgFTub9qSQ7esuORuNDJS6YpgAqLofKR1FTycyawFceiA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-localize/-/dk-localize-3.1.7.tgz}
+  registry.npmjs.org/dk-localize@3.1.11:
+    resolution: {integrity: sha512-oWZl6pWFgw5UYhG2Vtvn21TwmMnPn/0SLRUoXcNUgtPSrJir0CIVWfcmpDxFTsK9xkO7pCzG6vm4kDHn8EfbTw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-localize/-/dk-localize-3.1.11.tgz}
     name: dk-localize
-    version: 3.1.7
+    version: 3.1.11
     dev: false
 
-  registry.npmjs.org/dk-mobx-stateful-fn@3.1.7(mobx@6.9.0):
-    resolution: {integrity: sha512-j+JaBTJ2tdqFoeB5jMqavgAk3tm+cRrABtkBTNNfUdqK6q2JbNKrbrajG0hFtQQea/1xgxzBQGo88me/fC/sKw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-stateful-fn/-/dk-mobx-stateful-fn-3.1.7.tgz}
-    id: registry.npmjs.org/dk-mobx-stateful-fn/3.1.7
+  registry.npmjs.org/dk-mobx-restore-state@3.1.11:
+    resolution: {integrity: sha512-vy7nt1lUl7qJ8D0tX0CiawJKlxjLG3kEV0sWCwfPbNG+IWVJAFNrW3iPuTdusX81aiA7RypAqKHxOBnXwm55tQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-restore-state/-/dk-mobx-restore-state-3.1.11.tgz}
+    name: dk-mobx-restore-state
+    version: 3.1.11
+    dev: false
+
+  registry.npmjs.org/dk-mobx-stateful-fn@3.1.11(mobx@6.9.0):
+    resolution: {integrity: sha512-ENVuFxlFdBYGkSdutyoR7vMfuC851cGmnxdvc9Nb7ZcsMQwP637LBpqhKu20FqyUmcT0FX84VB/tA81CKyVuJQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-stateful-fn/-/dk-mobx-stateful-fn-3.1.11.tgz}
+    id: registry.npmjs.org/dk-mobx-stateful-fn/3.1.11
     name: dk-mobx-stateful-fn
-    version: 3.1.7
+    version: 3.1.11
     peerDependencies:
       mobx: '*'
     dependencies:
       mobx: registry.npmjs.org/mobx@6.9.0
     dev: false
 
-  registry.npmjs.org/dk-react-mobx-globals-logger@3.1.7(dk-react-mobx-globals@3.1.7)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
-    resolution: {integrity: sha512-wjfABf2NplQD+/ZIjzx+5QN4TybKAYUBDTjNWyu86+iqre4ki+M9NaXkC4W4bEGvDdw4ryZuID33G9ueYkEL2A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals-logger/-/dk-react-mobx-globals-logger-3.1.7.tgz}
-    id: registry.npmjs.org/dk-react-mobx-globals-logger/3.1.7
+  registry.npmjs.org/dk-react-mobx-globals-logger@3.1.11(dk-react-mobx-globals@3.1.11)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
+    resolution: {integrity: sha512-H+3B5Gj8z3bDmmKkywoAj4dLkCkMyYPA/De4VxrCie094X5/elNO9Q5Dvnw8RG6GOA+RkkKwnLjtlCxk9JoeIQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals-logger/-/dk-react-mobx-globals-logger-3.1.11.tgz}
+    id: registry.npmjs.org/dk-react-mobx-globals-logger/3.1.11
     name: dk-react-mobx-globals-logger
-    version: 3.1.7
+    version: 3.1.11
     peerDependencies:
       dk-react-mobx-globals: '*'
       mobx: '*'
       mobx-react: '*'
       react: '*'
     dependencies:
-      dk-react-mobx-globals: registry.npmjs.org/dk-react-mobx-globals@3.1.7(dk-localize@3.1.7)(dk-request@3.1.7)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
+      dk-react-mobx-globals: registry.npmjs.org/dk-react-mobx-globals@3.1.11(dk-localize@3.1.11)(dk-mobx-restore-state@3.1.11)(dk-request@3.1.11)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
       mobx: registry.npmjs.org/mobx@6.9.0
       mobx-react: registry.npmjs.org/mobx-react@7.6.0(mobx@6.9.0)(react-dom@18.2.0)(react@18.2.0)
       react: registry.npmjs.org/react@18.2.0
     dev: false
 
-  registry.npmjs.org/dk-react-mobx-globals@3.1.7(dk-localize@3.1.7)(dk-request@3.1.7)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
-    resolution: {integrity: sha512-/mL8X7s9jjrvKfhBmUlWcg2WtJNup9L6To5In+KOg0dfpXSeG/63fWru6fG4++cGKUDyLD0tGF/kdxYzy4+/ww==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals/-/dk-react-mobx-globals-3.1.7.tgz}
-    id: registry.npmjs.org/dk-react-mobx-globals/3.1.7
+  registry.npmjs.org/dk-react-mobx-globals@3.1.11(dk-localize@3.1.11)(dk-mobx-restore-state@3.1.11)(dk-request@3.1.11)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
+    resolution: {integrity: sha512-Dbi2MvWiRtp+65f79cDY50RTXQrxRn5luF2XxbyDIKhSh5CC+HLscG9Y2rQTp1mHaL9ngoo6n80K2EP6l7IL6g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals/-/dk-react-mobx-globals-3.1.11.tgz}
+    id: registry.npmjs.org/dk-react-mobx-globals/3.1.11
     name: dk-react-mobx-globals
-    version: 3.1.7
+    version: 3.1.11
     peerDependencies:
       dk-localize: '*'
+      dk-mobx-restore-state: '*'
       dk-request: '*'
       history: '*'
       mobx: '*'
       mobx-react: '*'
       react: '*'
     dependencies:
-      dk-localize: registry.npmjs.org/dk-localize@3.1.7
-      dk-mobx-stateful-fn: registry.npmjs.org/dk-mobx-stateful-fn@3.1.7(mobx@6.9.0)
-      dk-request: registry.npmjs.org/dk-request@3.1.7(ts-interface-checker@1.0.2)
+      dk-localize: registry.npmjs.org/dk-localize@3.1.11
+      dk-mobx-restore-state: registry.npmjs.org/dk-mobx-restore-state@3.1.11
+      dk-mobx-stateful-fn: registry.npmjs.org/dk-mobx-stateful-fn@3.1.11(mobx@6.9.0)
+      dk-request: registry.npmjs.org/dk-request@3.1.11(ts-interface-checker@1.0.2)
       history: registry.npmjs.org/history@5.3.0
       mobx: registry.npmjs.org/mobx@6.9.0
       mobx-react: registry.npmjs.org/mobx-react@7.6.0(mobx@6.9.0)(react-dom@18.2.0)(react@18.2.0)
       react: registry.npmjs.org/react@18.2.0
     dev: false
 
-  registry.npmjs.org/dk-reload-server@3.1.7:
-    resolution: {integrity: sha512-MbAXSGwJXdDe0uHc2pv3wE7JGFsYIlEvih46N2FWCwCBefe0wTnbE32UHccYwej9otKPmTU0rHgBiOElMUFSow==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-reload-server/-/dk-reload-server-3.1.7.tgz}
+  registry.npmjs.org/dk-reload-server@3.1.11:
+    resolution: {integrity: sha512-Z2+CJdAuixb/+4SaeNRPdmYPPUhVtz8RS7GWKDS8lRuV9C4WhHVX1EzlzDpdE3TbOB1JX2+aVnIJFb+ajl+4PQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-reload-server/-/dk-reload-server-3.1.11.tgz}
     name: dk-reload-server
-    version: 3.1.7
+    version: 3.1.11
     engines: {node: '>=16.0.0'}
     dependencies:
       chalk: registry.npmjs.org/chalk@4.1.2
@@ -5178,26 +5192,26 @@ packages:
       - utf-8-validate
     dev: false
 
-  registry.npmjs.org/dk-request@3.1.7(ts-interface-checker@1.0.2):
-    resolution: {integrity: sha512-VamZgsrjVuZZUCr2wN522+QFynkbsxlPqFWcIoO2CyRGlu0nVspglYydrDxlBRxlBJ5D8m5zZQSM4p/daUNv3A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-request/-/dk-request-3.1.7.tgz}
-    id: registry.npmjs.org/dk-request/3.1.7
+  registry.npmjs.org/dk-request@3.1.11(ts-interface-checker@1.0.2):
+    resolution: {integrity: sha512-Eo0zaINqEWzlIsRu56LWfnxQazLFRh3iAZKfKXU+ElkwqzZqz0L6kSCd+0YKe+vXE7hAPJkwMaItwmhB7JaVaw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-request/-/dk-request-3.1.11.tgz}
+    id: registry.npmjs.org/dk-request/3.1.11
     name: dk-request
-    version: 3.1.7
+    version: 3.1.11
     peerDependencies:
       ts-interface-checker: '*'
     dependencies:
       axios: registry.npmjs.org/axios@1.4.0
-      dk-checker-remove-extraneous: registry.npmjs.org/dk-checker-remove-extraneous@3.1.7
+      dk-checker-remove-extraneous: registry.npmjs.org/dk-checker-remove-extraneous@3.1.11
       ts-interface-checker: registry.npmjs.org/ts-interface-checker@1.0.2
     transitivePeerDependencies:
       - debug
     dev: false
 
-  registry.npmjs.org/dk-webpack-config@3.1.7(@swc/core@1.3.66):
-    resolution: {integrity: sha512-89nq/KDBEX9JLJMJ4U+g4u4VGaDq8IBUymc7VtYv2wg8xV52j29ViSaG2N2IJvKBkZSy7eKJPtLeCxljYZ1Drw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-config/-/dk-webpack-config-3.1.7.tgz}
-    id: registry.npmjs.org/dk-webpack-config/3.1.7
+  registry.npmjs.org/dk-webpack-config@3.1.11(@swc/core@1.3.66):
+    resolution: {integrity: sha512-MM4HcBF+lIfGPZSVvNj8l0cAYNIeUavfGYri2U7pQX5nXw/T4wbJXepL6/w+NySgz/Vv5/+uiODuWt/lJYqfyw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-config/-/dk-webpack-config-3.1.11.tgz}
+    id: registry.npmjs.org/dk-webpack-config/3.1.11
     name: dk-webpack-config
-    version: 3.1.7
+    version: 3.1.11
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@swc/core': ^1.3.40
@@ -5211,7 +5225,7 @@ packages:
       core-js: registry.npmjs.org/core-js@3.31.0
       css-loader: registry.npmjs.org/css-loader@6.8.1(webpack@5.88.0)
       css-minimizer-webpack-plugin: registry.npmjs.org/css-minimizer-webpack-plugin@5.0.1(webpack@5.88.0)
-      dk-conditional-aggregate-webpack-plugin: registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.7
+      dk-conditional-aggregate-webpack-plugin: registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.11
       file-loader: registry.npmjs.org/file-loader@6.2.0(webpack@5.88.0)
       html-webpack-plugin: registry.npmjs.org/html-webpack-plugin@5.5.3(webpack@5.88.0)
       image-minimizer-webpack-plugin: registry.npmjs.org/image-minimizer-webpack-plugin@3.8.3(imagemin@8.0.1)(webpack@5.88.0)
@@ -5259,11 +5273,11 @@ packages:
       - webpack-dev-server
     dev: false
 
-  registry.npmjs.org/dk-webpack-parallel-simple@3.1.7(@swc-node/register@1.6.6)(webpack@5.88.0):
-    resolution: {integrity: sha512-Q85yeOmvRe98xRW1QZBIzz6bsTJ8RL5gb3F8IV1X1cxjStgilbHxldy+m9DiYVfaq/aR4/tvQw7LQ4p7KKJp8Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-parallel-simple/-/dk-webpack-parallel-simple-3.1.7.tgz}
-    id: registry.npmjs.org/dk-webpack-parallel-simple/3.1.7
+  registry.npmjs.org/dk-webpack-parallel-simple@3.1.11(@swc-node/register@1.6.6)(webpack@5.88.0):
+    resolution: {integrity: sha512-47rX5LoIWPsTcSX4MMgM8NbCpyOCwhQ9vr7kWoteGTHp8Nr4Kz7eG+8TTnhg5CmuCHIvN8nQg3ftlMpwgIFLnQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-parallel-simple/-/dk-webpack-parallel-simple-3.1.11.tgz}
+    id: registry.npmjs.org/dk-webpack-parallel-simple/3.1.11
     name: dk-webpack-parallel-simple
-    version: 3.1.7
+    version: 3.1.11
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@swc-node/register': '*'

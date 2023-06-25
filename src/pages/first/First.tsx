@@ -18,9 +18,15 @@ export class First extends ConnectedComponent {
   });
 
   UNSAFE_componentWillMount() {
-    const { actions } = this.context;
+    const { actions, store } = this.context;
 
     void actions.routing.setMetaData({ title: messages.title, description: messages.description });
+
+    if (!IS_CLIENT) {
+      transformers.batch(() => {
+        store.pages.first.modularCounter = 1;
+      });
+    }
   }
 
   componentWillUnmount() {

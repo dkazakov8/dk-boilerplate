@@ -3,7 +3,8 @@ import { loadableReady } from '@loadable/component';
 import { hydrateRoot } from 'react-dom/client';
 // eslint-disable-next-line no-restricted-imports
 import _omitBy from 'lodash/omitBy';
-import { mergeObservableDeep, unescapeAllStrings } from 'dk-react-mobx-globals';
+import { unescapeAllStrings } from 'dk-react-mobx-globals';
+import { restoreState } from 'dk-mobx-restore-state';
 
 import { App } from 'comp/app';
 import { transformers } from 'compSystem/transformers';
@@ -26,7 +27,12 @@ const initialData = _omitBy(
 void Promise.resolve()
   .then(() => loadableReady())
   .then(() => {
-    mergeObservableDeep(globals.store, unescapeAllStrings(initialData), transformers);
+    restoreState({
+      target: globals.store,
+      source: unescapeAllStrings(initialData),
+      transformers,
+      logs: true,
+    });
   })
   .then(() => initAutorun(globals))
   .then(() => globals.actions.client.beforeRender())

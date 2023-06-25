@@ -1,4 +1,5 @@
-import { mergeObservableDeep, unescapeAllStrings } from 'dk-react-mobx-globals';
+import { unescapeAllStrings } from 'dk-react-mobx-globals';
+import { restoreState } from 'dk-mobx-restore-state';
 import { ReactNode } from 'react';
 
 import { env } from 'env';
@@ -11,7 +12,6 @@ import { ConnectedComponent } from './ConnectedComponent';
 const modularStorePath = 'pages' as const;
 const initialData = IS_CLIENT ? window.INITIAL_DATA || {} : {};
 const logs = env.LOGS_STORE_SETTER;
-const logsCanceledActions = env.LOGS_CANCELED_ACTIONS;
 
 // type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> & U[keyof U];
 
@@ -34,31 +34,8 @@ export class ModularStoresSetter extends ConnectedComponent<{
   }
 
   UNSAFE_componentWillMount() {
-    if (!this.context.store[modularStorePath]) {
-      this.context.store[modularStorePath] = {} as any;
-
-      this.log(`store has been extended with empty "store.${modularStorePath}" object`);
-    }
-
-    if (!this.context.actions[modularStorePath]) {
-      this.context.actions[modularStorePath] = {} as any;
-
-      this.log(`actions has been extended with empty "actions.${modularStorePath}" object`);
-    }
-
     this.extendStores();
     this.extendActions();
-  }
-
-  componentWillUnmount() {
-    const { noActionsCancel } = this.props;
-
-    if (!noActionsCancel) {
-      this.cancelExecutingApi();
-      this.cancelExecutingActions();
-    }
-
-    this.clearPages();
   }
 
   log = (message: string) => {
@@ -67,55 +44,6 @@ export class ModularStoresSetter extends ConnectedComponent<{
     if (logs) {
       // eslint-disable-next-line no-console
       console.log(`${logsPrefix} ${message}`, ...['color: green', 'color: initial']);
-    }
-  };
-
-  logCanceled = (message: string) => {
-    const logsPrefix = '%c[ModularStoresSetter] %c[canceled]%c';
-
-    if (logsCanceledActions) {
-      // eslint-disable-next-line no-console
-      console.log(`${logsPrefix} ${message}`, ...['color: green', 'color: red', 'color: initial']);
-    }
-  };
-
-  cancelExecutingApi = () => {
-    const apiExecuting = Object.values(this.context.api).filter(
-      (apiFn) => apiFn.state?.isExecuting
-    );
-
-    if (apiExecuting.length) {
-      transformers.batch(() => {
-        apiExecuting.forEach((apiFn) => {
-          apiFn.state.isCancelled = true;
-        });
-      });
-
-      this.logCanceled(apiExecuting.map((apiFn) => `api.${apiFn.name}`).join(', '));
-    }
-  };
-
-  cancelExecutingActions = () => {
-    const { actions } = this.props;
-
-    if (!actions) return;
-
-    const moduleName = Object.keys(actions)[0];
-    const moduleActionsExecuting = Object.entries(
-      // @ts-ignore
-      this.context.actions[modularStorePath][moduleName]
-    ).filter(([, actionFn]) => (actionFn as any).state?.isExecuting);
-
-    if (moduleActionsExecuting.length) {
-      transformers.batch(() => {
-        moduleActionsExecuting.forEach(([, actionFn]) => {
-          (actionFn as any).state.isCancelled = true;
-        });
-      });
-
-      this.logCanceled(
-        moduleActionsExecuting.map(([actionName]) => `${moduleName}.${actionName}`).join(', ')
-      );
     }
   };
 
@@ -145,11 +73,12 @@ export class ModularStoresSetter extends ConnectedComponent<{
         const storeInitialData = initialPagesData[storeName];
 
         if (storeInitialData) {
-          mergeObservableDeep(
-            pagesObject[storeName],
-            unescapeAllStrings(storeInitialData),
-            transformers
-          );
+          restoreState({
+            target: pagesObject[storeName],
+            source: unescapeAllStrings(storeInitialData),
+            transformers,
+            logs: true,
+          });
 
           this.log(
             `data for "store.${modularStorePath}.${storeName}" has been restored from initial object`
@@ -187,6 +116,7 @@ export class ModularStoresSetter extends ConnectedComponent<{
       const actionGroup = actions[actionGroupName]!;
 
       pagesObject[actionGroupName] = getTypedEntries(actionGroup).reduce(
+        // @ts-ignore
         (acc, [actionName, fn]) => {
           acc[actionName] = this.context.createWrappedAction(fn);
 
@@ -197,13 +127,6 @@ export class ModularStoresSetter extends ConnectedComponent<{
 
       this.log(`actions has been extended with "actions.${modularStorePath}.${actionGroupName}"`);
     });
-  };
-
-  clearPages = () => {
-    this.context.store[modularStorePath] = {} as any;
-    this.context.actions[modularStorePath] = {} as any;
-
-    this.log(`"store.${modularStorePath}" and "actions.${modularStorePath}" has been emptied`);
   };
 
   render() {
