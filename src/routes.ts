@@ -4,16 +4,20 @@ import { TypeRoutesGenerator } from 'dk-react-mobx-globals';
 import { addNames } from 'utils/system/addNames';
 
 const routesObject = addNames({
-  first: {
-    name: 'first' as const,
+  first2: {
     path: '/',
-    loader: loadable(() => import('pages/first/Extender')),
+    pageName: 'first',
+    loader: loadable(() => import('pages/first/First')),
+    storeLoader: () => import('pages/first/store'),
+    actionsLoader: () => import('pages/first/actions'),
     params: {},
   },
   second: {
-    name: 'second' as const,
     path: '/second',
-    loader: loadable(() => import('pages/second/Extender')),
+    pageName: 'second',
+    loader: loadable(() => import('pages/second/Second')),
+    storeLoader: () => import('pages/second/store'),
+    actionsLoader: () => import('pages/second/actions'),
     params: {},
     before: () => {
       // eslint-disable-next-line no-console
@@ -23,13 +27,15 @@ const routesObject = addNames({
 
   error404: {
     path: '/error404',
-    loader: loadable(() => import('pages/error/Extender')),
+    pageName: 'error',
+    loader: loadable(() => import('pages/error/Error')),
     props: { errorNumber: 404 },
     params: {},
   },
   error500: {
     path: '/error500',
-    loader: loadable(() => import('pages/error/Extender')),
+    pageName: 'error',
+    loader: loadable(() => import('pages/error/Error')),
     props: { errorNumber: 500 },
     params: {},
   },

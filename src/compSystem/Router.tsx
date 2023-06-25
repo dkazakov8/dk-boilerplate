@@ -1,11 +1,13 @@
 /* eslint-disable react/no-set-state, @typescript-eslint/naming-convention */
 
 import { ReactElement } from 'react';
-import { getPlainActions } from 'dk-react-mobx-globals';
+import { getPlainActions, unescapeAllStrings } from 'dk-react-mobx-globals';
+import { restoreState } from 'dk-mobx-restore-state';
 
 import { routes, TypeRouteValues } from 'routes';
-import { appendAutorun, history } from 'utils';
+import { appendAutorun, getTypedEntries, getTypedKeys, history } from 'utils';
 import { env } from 'env';
+import { TypeGlobals } from 'models';
 
 import { transformers } from './transformers';
 import { ConnectedComponent } from './ConnectedComponent';
@@ -13,15 +15,16 @@ import { ConnectedComponent } from './ConnectedComponent';
 const modularStorePath = 'pages' as const;
 const logs = env.LOGS_STORE_SETTER;
 const logsCanceledActions = env.LOGS_CANCELED_ACTIONS;
+const initialData = IS_CLIENT ? window.INITIAL_DATA || {} : {};
 
 export class Router extends ConnectedComponent<{}, TypeRouteValues> {
-  state: {
-    loadedComponent?: ReactElement;
+  localState: {
     loadedComponentName?: keyof typeof routes;
-  } = {
-    loadedComponent: undefined,
+  } = transformers.observable({
     loadedComponentName: undefined,
-  };
+  });
+
+  loadedComponent?: ReactElement;
 
   UNSAFE_componentWillMount() {
     this.clearPages();
@@ -105,7 +108,7 @@ export class Router extends ConnectedComponent<{}, TypeRouteValues> {
   };
 
   setLoadedComponent = () => {
-    const { loadedComponentName } = this.state;
+    const { loadedComponentName } = this.localState;
     const { actions, store } = this.context;
 
     const currentRouteName = store.router.currentRoute.name;
@@ -127,20 +130,105 @@ export class Router extends ConnectedComponent<{}, TypeRouteValues> {
     }
   };
 
+  extendStores = (stores: Partial<TypeGlobals['store'][typeof modularStorePath]>) => {
+    const { store } = this.context;
+
+    if (!stores) return;
+
+    const pagesObject = store[modularStorePath];
+    const initialPagesData = initialData[modularStorePath];
+
+    getTypedKeys(stores).forEach((storeName) => {
+      if (pagesObject[storeName]) return;
+
+      /**
+       * Client should recreate dynamic stores with initial data passed from server,
+       * because SSR does not serialize get() & set() statements
+       *
+       */
+
+      // @ts-ignore
+      pagesObject[storeName] = new stores[storeName]!();
+
+      this.log(`store has been extended with "store.${modularStorePath}.${storeName}"`);
+
+      if (initialPagesData) {
+        const storeInitialData = initialPagesData[storeName];
+
+        if (storeInitialData) {
+          restoreState({
+            logs: env.LOGS_RESTORE_INITIAL,
+            target: pagesObject[storeName],
+            source: unescapeAllStrings(storeInitialData),
+            transformers,
+          });
+
+          this.log(
+            `data for "store.${modularStorePath}.${storeName}" has been restored from initial object`
+          );
+        }
+
+        /**
+         * Delete from variable for clear SPA experience on navigation (back/forward)
+         * so when user comes back to the first loaded page he won't see too old data
+         *
+         */
+
+        delete initialData[modularStorePath];
+
+        this.log(`"${modularStorePath}" has been deleted from initial object`);
+      }
+    });
+  };
+
+  extendActions = (actions: Partial<TypeGlobals['actions'][typeof modularStorePath]>) => {
+    if (!actions) return;
+
+    /**
+     * When actions are mocked during SSR no need to waste time on wrapping
+     *
+     */
+
+    const pagesObject = this.context.actions[modularStorePath];
+
+    getTypedKeys(actions).forEach((actionGroupName) => {
+      if (pagesObject[actionGroupName]) return;
+
+      const actionGroup = actions[actionGroupName]!;
+
+      pagesObject[actionGroupName] = getTypedEntries(actionGroup).reduce(
+        // @ts-ignore
+        (acc, [actionName, fn]) => {
+          acc[actionName] = this.context.createWrappedAction(fn);
+
+          return acc;
+        },
+        {} as any
+      );
+
+      this.log(`actions has been extended with "actions.${modularStorePath}.${actionGroupName}"`);
+    });
+  };
+
   setComponent = (currentRouteName: keyof typeof routes) => {
     const componentConfig = routes[currentRouteName];
     const props = 'props' in componentConfig ? componentConfig.props : {};
-    const RouteComponent: any = componentConfig.component || componentConfig.loader;
+    const RouteComponent: any = componentConfig.component;
 
-    this.setState({
-      loadedComponent: <RouteComponent {...props} />,
-      loadedComponentName: currentRouteName,
+    if (componentConfig.store?.default) {
+      this.extendStores({ [componentConfig.pageName]: componentConfig.store?.default });
+    }
+    if (componentConfig.actions) {
+      this.extendActions({ [componentConfig.pageName]: componentConfig.actions });
+    }
+
+    transformers.batch(() => {
+      this.localState.loadedComponentName = currentRouteName;
+      this.loadedComponent = <RouteComponent {...props} />;
     });
   };
 
   render() {
-    const { loadedComponent } = this.state;
-
-    return loadedComponent;
+    return this.localState.loadedComponentName ? this.loadedComponent : null;
   }
 }

@@ -13,7 +13,7 @@ export class Layout extends ConnectedComponent<{ children: ReactNode }, TypeRout
     const { getLn, store } = this.context;
 
     const links = [
-      { route: routes.first, title: getLn(messages.linkFirst) },
+      { route: routes.first2, title: getLn(messages.linkFirst) },
       { route: routes.second, title: getLn(messages.linkSecond) },
     ];
 

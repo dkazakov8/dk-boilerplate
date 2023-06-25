@@ -9,7 +9,8 @@ import styles from './Second.scss';
 
 const DELAY = 1000;
 
-export class Second extends ConnectedComponent {
+// eslint-disable-next-line import/no-default-export
+export default class Second extends ConnectedComponent {
   localTimeout?: ReturnType<typeof setTimeout> = undefined;
 
   localState = transformers.observable({

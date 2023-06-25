@@ -25,7 +25,7 @@ dependencies:
     version: registry.npmjs.org/@swc-node/core@1.10.4(@swc/core@1.3.66)
   '@swc-node/register':
     specifier: 1.6.6
-    version: registry.npmjs.org/@swc-node/register@1.6.6(@swc/core@1.3.66)(typescript@5.1.3)
+    version: registry.npmjs.org/@swc-node/register@1.6.6(@swc/core@1.3.66)(typescript@5.0.4)
   '@swc/core':
     specifier: 1.3.66
     version: registry.npmjs.org/@swc/core@1.3.66
@@ -42,38 +42,38 @@ dependencies:
     specifier: 2.3.2
     version: registry.npmjs.org/classnames@2.3.2
   dk-bff-server:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-bff-server@3.1.11
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-bff-server@3.1.14
   dk-compare-env:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-compare-env@3.1.11
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-compare-env@3.1.14
   dk-file-generator:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-file-generator@3.1.11(typescript@5.1.3)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-file-generator@3.1.14(typescript@5.0.4)
   dk-localize:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-localize@3.1.11
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-localize@3.1.14
   dk-mobx-restore-state:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-mobx-restore-state@3.1.11
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-mobx-restore-state@3.1.14
   dk-react-mobx-globals:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-react-mobx-globals@3.1.11(dk-localize@3.1.11)(dk-mobx-restore-state@3.1.11)(dk-request@3.1.11)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-react-mobx-globals@3.1.14(dk-localize@3.1.14)(dk-mobx-restore-state@3.1.14)(dk-request@3.1.14)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
   dk-react-mobx-globals-logger:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-react-mobx-globals-logger@3.1.11(dk-react-mobx-globals@3.1.11)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-react-mobx-globals-logger@3.1.14(dk-react-mobx-globals@3.1.14)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
   dk-reload-server:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-reload-server@3.1.11
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-reload-server@3.1.14
   dk-request:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-request@3.1.11(ts-interface-checker@1.0.2)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-request@3.1.14(ts-interface-checker@1.0.2)
   dk-webpack-config:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-webpack-config@3.1.11(@swc/core@1.3.66)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-webpack-config@3.1.14(@swc/core@1.3.66)
   dk-webpack-parallel-simple:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-webpack-parallel-simple@3.1.11(@swc-node/register@1.6.6)(webpack@5.88.0)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-webpack-parallel-simple@3.1.14(@swc-node/register@1.6.6)(webpack@5.88.0)
   dotenv:
     specifier: 16.3.1
     version: registry.npmjs.org/dotenv@16.3.1
@@ -100,13 +100,13 @@ dependencies:
     version: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
   react-styleguidist:
     specifier: 13.1.1
-    version: registry.npmjs.org/react-styleguidist@13.1.1(@swc/core@1.3.66)(eslint@8.43.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)(webpack-cli@5.1.4)(webpack@5.88.0)
+    version: registry.npmjs.org/react-styleguidist@13.1.1(@swc/core@1.3.66)(eslint@8.43.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(webpack-cli@5.1.4)(webpack@5.88.0)
   ts-interface-checker:
     specifier: 1.0.2
     version: registry.npmjs.org/ts-interface-checker@1.0.2
   typescript:
-    specifier: 5.1.3
-    version: registry.npmjs.org/typescript@5.1.3
+    specifier: 5.0.4
+    version: registry.npmjs.org/typescript@5.0.4
 
 devDependencies:
   '@types/classnames':
@@ -137,8 +137,8 @@ devDependencies:
     specifier: 8.5.5
     version: registry.npmjs.org/@types/ws@8.5.5
   dk-eslint-config:
-    specifier: 3.1.11
-    version: registry.npmjs.org/dk-eslint-config@3.1.11(typescript@5.1.3)
+    specifier: 3.1.14
+    version: registry.npmjs.org/dk-eslint-config@3.1.14(typescript@5.0.4)
   husky:
     specifier: 8.0.3
     version: registry.npmjs.org/husky@8.0.3
@@ -2088,7 +2088,7 @@ packages:
       '@swc/core': registry.npmjs.org/@swc/core@1.3.66
     dev: false
 
-  registry.npmjs.org/@swc-node/register@1.6.6(@swc/core@1.3.66)(typescript@5.1.3):
+  registry.npmjs.org/@swc-node/register@1.6.6(@swc/core@1.3.66)(typescript@5.0.4):
     resolution: {integrity: sha512-KgnQrWLgtJzEgPpxvhOPUDonv1xreVumGdzXDQlDVIqU3vH+spW8ZYxxyjJVMh3G/mQG8E3bFvUMHIS+E3FL2w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc-node/register/-/register-1.6.6.tgz}
     id: registry.npmjs.org/@swc-node/register/1.6.6
     name: '@swc-node/register'
@@ -2104,7 +2104,7 @@ packages:
       debug: registry.npmjs.org/debug@4.3.4
       pirates: registry.npmjs.org/pirates@4.0.5
       tslib: registry.npmjs.org/tslib@2.5.0
-      typescript: registry.npmjs.org/typescript@5.1.3
+      typescript: registry.npmjs.org/typescript@5.0.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2644,7 +2644,7 @@ packages:
       '@types/yargs-parser': registry.npmjs.org/@types/yargs-parser@21.0.0
     dev: false
 
-  registry.npmjs.org/@typescript-eslint/eslint-plugin@5.60.0(@typescript-eslint/parser@5.60.0)(eslint@8.43.0)(typescript@5.1.3):
+  registry.npmjs.org/@typescript-eslint/eslint-plugin@5.60.0(@typescript-eslint/parser@5.60.0)(eslint@8.43.0)(typescript@5.0.4):
     resolution: {integrity: sha512-78B+anHLF1TI8Jn/cD0Q00TBYdMgjdOn980JfAVa9yw5sop8nyTfVOQAv6LWywkOGLclDBtv5z3oxN4w7jxyNg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.60.0.tgz}
     id: registry.npmjs.org/@typescript-eslint/eslint-plugin/5.60.0
     name: '@typescript-eslint/eslint-plugin'
@@ -2659,18 +2659,18 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': registry.npmjs.org/@eslint-community/regexpp@4.5.1
-      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.1.3)
+      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.0.4)
       '@typescript-eslint/scope-manager': registry.npmjs.org/@typescript-eslint/scope-manager@5.60.0
-      '@typescript-eslint/type-utils': registry.npmjs.org/@typescript-eslint/type-utils@5.60.0(eslint@8.43.0)(typescript@5.1.3)
-      '@typescript-eslint/utils': registry.npmjs.org/@typescript-eslint/utils@5.60.0(eslint@8.43.0)(typescript@5.1.3)
+      '@typescript-eslint/type-utils': registry.npmjs.org/@typescript-eslint/type-utils@5.60.0(eslint@8.43.0)(typescript@5.0.4)
+      '@typescript-eslint/utils': registry.npmjs.org/@typescript-eslint/utils@5.60.0(eslint@8.43.0)(typescript@5.0.4)
       debug: registry.npmjs.org/debug@4.3.4
       eslint: registry.npmjs.org/eslint@8.43.0
       grapheme-splitter: registry.npmjs.org/grapheme-splitter@1.0.4
       ignore: registry.npmjs.org/ignore@5.2.4
       natural-compare-lite: registry.npmjs.org/natural-compare-lite@1.4.0
       semver: registry.npmjs.org/semver@7.5.1
-      tsutils: registry.npmjs.org/tsutils@3.21.0(typescript@5.1.3)
-      typescript: registry.npmjs.org/typescript@5.1.3
+      tsutils: registry.npmjs.org/tsutils@3.21.0(typescript@5.0.4)
+      typescript: registry.npmjs.org/typescript@5.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2698,7 +2698,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.1.3):
+  registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.0.4):
     resolution: {integrity: sha512-jBONcBsDJ9UoTWrARkRRCgDz6wUggmH5RpQVlt7BimSwaTkTjwypGzKORXbR4/2Hqjk9hgwlon2rVQAjWNpkyQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.60.0.tgz}
     id: registry.npmjs.org/@typescript-eslint/parser/5.60.0
     name: '@typescript-eslint/parser'
@@ -2713,10 +2713,10 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': registry.npmjs.org/@typescript-eslint/scope-manager@5.60.0
       '@typescript-eslint/types': registry.npmjs.org/@typescript-eslint/types@5.60.0
-      '@typescript-eslint/typescript-estree': registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.1.3)
+      '@typescript-eslint/typescript-estree': registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.0.4)
       debug: registry.npmjs.org/debug@4.3.4
       eslint: registry.npmjs.org/eslint@8.43.0
-      typescript: registry.npmjs.org/typescript@5.1.3
+      typescript: registry.npmjs.org/typescript@5.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2731,7 +2731,7 @@ packages:
       '@typescript-eslint/visitor-keys': registry.npmjs.org/@typescript-eslint/visitor-keys@5.60.0
     dev: true
 
-  registry.npmjs.org/@typescript-eslint/type-utils@5.60.0(eslint@8.43.0)(typescript@5.1.3):
+  registry.npmjs.org/@typescript-eslint/type-utils@5.60.0(eslint@8.43.0)(typescript@5.0.4):
     resolution: {integrity: sha512-X7NsRQddORMYRFH7FWo6sA9Y/zbJ8s1x1RIAtnlj6YprbToTiQnM6vxcMu7iYhdunmoC0rUWlca13D5DVHkK2g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-5.60.0.tgz}
     id: registry.npmjs.org/@typescript-eslint/type-utils/5.60.0
     name: '@typescript-eslint/type-utils'
@@ -2744,12 +2744,12 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.1.3)
-      '@typescript-eslint/utils': registry.npmjs.org/@typescript-eslint/utils@5.60.0(eslint@8.43.0)(typescript@5.1.3)
+      '@typescript-eslint/typescript-estree': registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.0.4)
+      '@typescript-eslint/utils': registry.npmjs.org/@typescript-eslint/utils@5.60.0(eslint@8.43.0)(typescript@5.0.4)
       debug: registry.npmjs.org/debug@4.3.4
       eslint: registry.npmjs.org/eslint@8.43.0
-      tsutils: registry.npmjs.org/tsutils@3.21.0(typescript@5.1.3)
-      typescript: registry.npmjs.org/typescript@5.1.3
+      tsutils: registry.npmjs.org/tsutils@3.21.0(typescript@5.0.4)
+      typescript: registry.npmjs.org/typescript@5.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2785,7 +2785,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.1.3):
+  registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.0.4):
     resolution: {integrity: sha512-R43thAuwarC99SnvrBmh26tc7F6sPa2B3evkXp/8q954kYL6Ro56AwASYWtEEi+4j09GbiNAHqYwNNZuNlARGQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-5.60.0.tgz}
     id: registry.npmjs.org/@typescript-eslint/typescript-estree/5.60.0
     name: '@typescript-eslint/typescript-estree'
@@ -2803,13 +2803,13 @@ packages:
       globby: registry.npmjs.org/globby@11.1.0
       is-glob: registry.npmjs.org/is-glob@4.0.3
       semver: registry.npmjs.org/semver@7.5.1
-      tsutils: registry.npmjs.org/tsutils@3.21.0(typescript@5.1.3)
-      typescript: registry.npmjs.org/typescript@5.1.3
+      tsutils: registry.npmjs.org/tsutils@3.21.0(typescript@5.0.4)
+      typescript: registry.npmjs.org/typescript@5.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmjs.org/@typescript-eslint/utils@5.60.0(eslint@8.43.0)(typescript@5.1.3):
+  registry.npmjs.org/@typescript-eslint/utils@5.60.0(eslint@8.43.0)(typescript@5.0.4):
     resolution: {integrity: sha512-ba51uMqDtfLQ5+xHtwlO84vkdjrqNzOnqrnwbMHMRY8Tqeme8C2Q8Fc7LajfGR+e3/4LoYiWXUM6BpIIbHJ4hQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@typescript-eslint/utils/-/utils-5.60.0.tgz}
     id: registry.npmjs.org/@typescript-eslint/utils/5.60.0
     name: '@typescript-eslint/utils'
@@ -2823,7 +2823,7 @@ packages:
       '@types/semver': registry.npmjs.org/@types/semver@7.5.0
       '@typescript-eslint/scope-manager': registry.npmjs.org/@typescript-eslint/scope-manager@5.60.0
       '@typescript-eslint/types': registry.npmjs.org/@typescript-eslint/types@5.60.0
-      '@typescript-eslint/typescript-estree': registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.1.3)
+      '@typescript-eslint/typescript-estree': registry.npmjs.org/@typescript-eslint/typescript-estree@5.60.0(typescript@5.0.4)
       eslint: registry.npmjs.org/eslint@8.43.0
       eslint-scope: registry.npmjs.org/eslint-scope@5.1.1
       semver: registry.npmjs.org/semver@7.5.1
@@ -5030,10 +5030,10 @@ packages:
     dependencies:
       path-type: registry.npmjs.org/path-type@4.0.0
 
-  registry.npmjs.org/dk-bff-server@3.1.11:
-    resolution: {integrity: sha512-IjjpyJ7Zd+oe3ggNZcluLyX9eRKwU6H4ln8c6x+G9t1e7f/sygaSFTgtw4u2Gw/l/RGd01H7UAcgZCs8ZZQIvQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-bff-server/-/dk-bff-server-3.1.11.tgz}
+  registry.npmjs.org/dk-bff-server@3.1.14:
+    resolution: {integrity: sha512-xy8ISWVK8nP4/B+BHg0BN/gIM1VoTQUn2XFIjA2XexAM8lCCLpV7I66rvBrU7mux3VcGH80F/E4/yR1NTF00RQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-bff-server/-/dk-bff-server-3.1.14.tgz}
     name: dk-bff-server
-    version: 3.1.11
+    version: 3.1.14
     engines: {node: '>=16.0.0'}
     dependencies:
       body-parser: registry.npmjs.org/body-parser@1.20.2
@@ -5046,40 +5046,40 @@ packages:
       - supports-color
     dev: false
 
-  registry.npmjs.org/dk-checker-remove-extraneous@3.1.11:
-    resolution: {integrity: sha512-SXjenv+rYGHVJ8OnZ3aEPE4R0VzrvQGLobs3Fd9ueVwuWqV3gAa3Gs8j+TUA9B2Cp4boqkjO/pdqF9tZINTJ4w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-checker-remove-extraneous/-/dk-checker-remove-extraneous-3.1.11.tgz}
+  registry.npmjs.org/dk-checker-remove-extraneous@3.1.14:
+    resolution: {integrity: sha512-Umw2MaJT5twP94M3BDGYBO6rQvHFsN3x22c2dK/btUFpI9n7IHuLJNGBsoq5zCAmVkAiK5q9bym8ORSslsr0RQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-checker-remove-extraneous/-/dk-checker-remove-extraneous-3.1.14.tgz}
     name: dk-checker-remove-extraneous
-    version: 3.1.11
+    version: 3.1.14
     dependencies:
       lodash.get: registry.npmjs.org/lodash.get@4.4.2
       lodash.unset: registry.npmjs.org/lodash.unset@4.5.2
     dev: false
 
-  registry.npmjs.org/dk-compare-env@3.1.11:
-    resolution: {integrity: sha512-x69minjPtL4QfsQKf9nhVDeEEwpTgjyk/Fuec8lcI9NNSlZoYXuyxU+JeWZqCw2UoLBIrW54rJKivcb+ejZNQw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-compare-env/-/dk-compare-env-3.1.11.tgz}
+  registry.npmjs.org/dk-compare-env@3.1.14:
+    resolution: {integrity: sha512-T1HNGSlSXI+OVoPLJJSBmvT0IAu4zgGXad/uZDsuGfgtRLGz/zLzEqQD16i/R5PyWXQXJAA0iWkEFGx1A+O0HA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-compare-env/-/dk-compare-env-3.1.14.tgz}
     name: dk-compare-env
-    version: 3.1.11
+    version: 3.1.14
     engines: {node: '>=16.0.0'}
     dependencies:
       dotenv: registry.npmjs.org/dotenv@16.3.1
     dev: false
 
-  registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.11:
-    resolution: {integrity: sha512-F6Mvw7+0eh6QPJ4PXNgA85CGbYcm8nCcimPNUAyM+EJAtznWQo2Hepr+5qpAUK1TBCm9k4PNRO8B6k//omcR4Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-conditional-aggregate-webpack-plugin/-/dk-conditional-aggregate-webpack-plugin-3.1.11.tgz}
+  registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.14:
+    resolution: {integrity: sha512-fSuH1pgFyCMlu/vn7oTmPRKYAWFrgUMoJvUYBW2QhZek9uuzrt8c6VG0btTX1iych7Gx+ZumjL7/bqKvASSHRg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-conditional-aggregate-webpack-plugin/-/dk-conditional-aggregate-webpack-plugin-3.1.14.tgz}
     name: dk-conditional-aggregate-webpack-plugin
-    version: 3.1.11
+    version: 3.1.14
     dev: false
 
-  registry.npmjs.org/dk-eslint-config@3.1.11(typescript@5.1.3):
-    resolution: {integrity: sha512-PCUugzMu43D1Z6R2eTnx0c1KNak2o6Jb23ALLiR7QQuntXXGnFYcvvZqlXirGkes+PmNJhI6yJWvSxb1/z+8/w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-eslint-config/-/dk-eslint-config-3.1.11.tgz}
-    id: registry.npmjs.org/dk-eslint-config/3.1.11
+  registry.npmjs.org/dk-eslint-config@3.1.14(typescript@5.0.4):
+    resolution: {integrity: sha512-0JckspS8KlNipyPYDhysHwI63WKvaspwqt0daVrANrsF1OjcMPYQPcw3hLdEhGYMnD+wnH4HAM5bDKX97rtWvA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-eslint-config/-/dk-eslint-config-3.1.14.tgz}
+    id: registry.npmjs.org/dk-eslint-config/3.1.14
     name: dk-eslint-config
-    version: 3.1.11
+    version: 3.1.14
     dependencies:
       '@types/eslint': registry.npmjs.org/@types/eslint@8.40.2
       '@types/eslint-plugin-prettier': registry.npmjs.org/@types/eslint-plugin-prettier@3.1.0
-      '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin@5.60.0(@typescript-eslint/parser@5.60.0)(eslint@8.43.0)(typescript@5.1.3)
-      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.1.3)
+      '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin@5.60.0(@typescript-eslint/parser@5.60.0)(eslint@8.43.0)(typescript@5.0.4)
+      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.0.4)
       eslint: registry.npmjs.org/eslint@8.43.0
       eslint-config-prettier: registry.npmjs.org/eslint-config-prettier@8.8.0(eslint@8.43.0)
       eslint-import-resolver-typescript: registry.npmjs.org/eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@5.60.0)(eslint-plugin-import@2.27.5)(eslint@8.43.0)
@@ -5099,11 +5099,11 @@ packages:
       - typescript
     dev: true
 
-  registry.npmjs.org/dk-file-generator@3.1.11(typescript@5.1.3):
-    resolution: {integrity: sha512-SQMJw+hX4xTvclj1Pi4/Uq8iaOt/iuS3W9FIo8MEqrpnbLvkOV6f6srqe9e3X+WjAf40kwhI3Zpw/tYB6tGSdg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-file-generator/-/dk-file-generator-3.1.11.tgz}
-    id: registry.npmjs.org/dk-file-generator/3.1.11
+  registry.npmjs.org/dk-file-generator@3.1.14(typescript@5.0.4):
+    resolution: {integrity: sha512-HuPdyXkD8e+BlHbHqNhAytPDHstgSQpqnglBjvU7G51YEFyWljZI8jEZuLm55bnfpDs+eXnGoN7WLE+ipX/ViQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-file-generator/-/dk-file-generator-3.1.14.tgz}
+    id: registry.npmjs.org/dk-file-generator/3.1.14
     name: dk-file-generator
-    version: 3.1.11
+    version: 3.1.14
     engines: {node: '>=16.0.0'}
     peerDependencies:
       typescript: '*'
@@ -5111,54 +5111,54 @@ packages:
       chalk: registry.npmjs.org/chalk@4.1.2
       chokidar: registry.npmjs.org/chokidar@3.5.3
       fs-extra: registry.npmjs.org/fs-extra@11.1.1
-      typescript: registry.npmjs.org/typescript@5.1.3
+      typescript: registry.npmjs.org/typescript@5.0.4
     dev: false
 
-  registry.npmjs.org/dk-localize@3.1.11:
-    resolution: {integrity: sha512-oWZl6pWFgw5UYhG2Vtvn21TwmMnPn/0SLRUoXcNUgtPSrJir0CIVWfcmpDxFTsK9xkO7pCzG6vm4kDHn8EfbTw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-localize/-/dk-localize-3.1.11.tgz}
+  registry.npmjs.org/dk-localize@3.1.14:
+    resolution: {integrity: sha512-l6SBI8vUbq5tKklUlCGamyeITwfZQHS21RP7gi02weB8PfET+b+tJIFNQtcm4o8sslSjKA7HHtegir3CdXhk8g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-localize/-/dk-localize-3.1.14.tgz}
     name: dk-localize
-    version: 3.1.11
+    version: 3.1.14
     dev: false
 
-  registry.npmjs.org/dk-mobx-restore-state@3.1.11:
-    resolution: {integrity: sha512-vy7nt1lUl7qJ8D0tX0CiawJKlxjLG3kEV0sWCwfPbNG+IWVJAFNrW3iPuTdusX81aiA7RypAqKHxOBnXwm55tQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-restore-state/-/dk-mobx-restore-state-3.1.11.tgz}
+  registry.npmjs.org/dk-mobx-restore-state@3.1.14:
+    resolution: {integrity: sha512-NAVoyD7jktfB1Y6X8/2ACii6MrQYtpqdCaStXOnLQiFKBnTKeByBhm4MeCYkXFmUDZF0ls0mhXkIcp6rVUAcrw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-restore-state/-/dk-mobx-restore-state-3.1.14.tgz}
     name: dk-mobx-restore-state
-    version: 3.1.11
+    version: 3.1.14
     dev: false
 
-  registry.npmjs.org/dk-mobx-stateful-fn@3.1.11(mobx@6.9.0):
-    resolution: {integrity: sha512-ENVuFxlFdBYGkSdutyoR7vMfuC851cGmnxdvc9Nb7ZcsMQwP637LBpqhKu20FqyUmcT0FX84VB/tA81CKyVuJQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-stateful-fn/-/dk-mobx-stateful-fn-3.1.11.tgz}
-    id: registry.npmjs.org/dk-mobx-stateful-fn/3.1.11
+  registry.npmjs.org/dk-mobx-stateful-fn@3.1.14(mobx@6.9.0):
+    resolution: {integrity: sha512-q1cOCaklmdL0jsMcMR2UlKnoteAQLHF+jMsghjDJNmKfbGpIaSiPFOpgLfsbYN1kOCJWMdlj3nqT4TGMPGspKg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-mobx-stateful-fn/-/dk-mobx-stateful-fn-3.1.14.tgz}
+    id: registry.npmjs.org/dk-mobx-stateful-fn/3.1.14
     name: dk-mobx-stateful-fn
-    version: 3.1.11
+    version: 3.1.14
     peerDependencies:
       mobx: '*'
     dependencies:
       mobx: registry.npmjs.org/mobx@6.9.0
     dev: false
 
-  registry.npmjs.org/dk-react-mobx-globals-logger@3.1.11(dk-react-mobx-globals@3.1.11)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
-    resolution: {integrity: sha512-H+3B5Gj8z3bDmmKkywoAj4dLkCkMyYPA/De4VxrCie094X5/elNO9Q5Dvnw8RG6GOA+RkkKwnLjtlCxk9JoeIQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals-logger/-/dk-react-mobx-globals-logger-3.1.11.tgz}
-    id: registry.npmjs.org/dk-react-mobx-globals-logger/3.1.11
+  registry.npmjs.org/dk-react-mobx-globals-logger@3.1.14(dk-react-mobx-globals@3.1.14)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
+    resolution: {integrity: sha512-PRbF48BWY4HalaIFJNPoULBkC6kpSEzurqUW1hHjpnRGsI/EwzZzjeGInN+EwOyJHLsmnzATH1eWk49v+ayjvg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals-logger/-/dk-react-mobx-globals-logger-3.1.14.tgz}
+    id: registry.npmjs.org/dk-react-mobx-globals-logger/3.1.14
     name: dk-react-mobx-globals-logger
-    version: 3.1.11
+    version: 3.1.14
     peerDependencies:
       dk-react-mobx-globals: '*'
       mobx: '*'
       mobx-react: '*'
       react: '*'
     dependencies:
-      dk-react-mobx-globals: registry.npmjs.org/dk-react-mobx-globals@3.1.11(dk-localize@3.1.11)(dk-mobx-restore-state@3.1.11)(dk-request@3.1.11)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
+      dk-react-mobx-globals: registry.npmjs.org/dk-react-mobx-globals@3.1.14(dk-localize@3.1.14)(dk-mobx-restore-state@3.1.14)(dk-request@3.1.14)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0)
       mobx: registry.npmjs.org/mobx@6.9.0
       mobx-react: registry.npmjs.org/mobx-react@7.6.0(mobx@6.9.0)(react-dom@18.2.0)(react@18.2.0)
       react: registry.npmjs.org/react@18.2.0
     dev: false
 
-  registry.npmjs.org/dk-react-mobx-globals@3.1.11(dk-localize@3.1.11)(dk-mobx-restore-state@3.1.11)(dk-request@3.1.11)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
-    resolution: {integrity: sha512-Dbi2MvWiRtp+65f79cDY50RTXQrxRn5luF2XxbyDIKhSh5CC+HLscG9Y2rQTp1mHaL9ngoo6n80K2EP6l7IL6g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals/-/dk-react-mobx-globals-3.1.11.tgz}
-    id: registry.npmjs.org/dk-react-mobx-globals/3.1.11
+  registry.npmjs.org/dk-react-mobx-globals@3.1.14(dk-localize@3.1.14)(dk-mobx-restore-state@3.1.14)(dk-request@3.1.14)(history@5.3.0)(mobx-react@7.6.0)(mobx@6.9.0)(react@18.2.0):
+    resolution: {integrity: sha512-8o0nIeMIj73MLzyC5Jla3fkzUekn9axRX/An2oBQA5NbQb/XPr22gG/PZZ20HadDGhpu3uW7KCmp+NGx2VWFow==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-react-mobx-globals/-/dk-react-mobx-globals-3.1.14.tgz}
+    id: registry.npmjs.org/dk-react-mobx-globals/3.1.14
     name: dk-react-mobx-globals
-    version: 3.1.11
+    version: 3.1.14
     peerDependencies:
       dk-localize: '*'
       dk-mobx-restore-state: '*'
@@ -5168,20 +5168,20 @@ packages:
       mobx-react: '*'
       react: '*'
     dependencies:
-      dk-localize: registry.npmjs.org/dk-localize@3.1.11
-      dk-mobx-restore-state: registry.npmjs.org/dk-mobx-restore-state@3.1.11
-      dk-mobx-stateful-fn: registry.npmjs.org/dk-mobx-stateful-fn@3.1.11(mobx@6.9.0)
-      dk-request: registry.npmjs.org/dk-request@3.1.11(ts-interface-checker@1.0.2)
+      dk-localize: registry.npmjs.org/dk-localize@3.1.14
+      dk-mobx-restore-state: registry.npmjs.org/dk-mobx-restore-state@3.1.14
+      dk-mobx-stateful-fn: registry.npmjs.org/dk-mobx-stateful-fn@3.1.14(mobx@6.9.0)
+      dk-request: registry.npmjs.org/dk-request@3.1.14(ts-interface-checker@1.0.2)
       history: registry.npmjs.org/history@5.3.0
       mobx: registry.npmjs.org/mobx@6.9.0
       mobx-react: registry.npmjs.org/mobx-react@7.6.0(mobx@6.9.0)(react-dom@18.2.0)(react@18.2.0)
       react: registry.npmjs.org/react@18.2.0
     dev: false
 
-  registry.npmjs.org/dk-reload-server@3.1.11:
-    resolution: {integrity: sha512-Z2+CJdAuixb/+4SaeNRPdmYPPUhVtz8RS7GWKDS8lRuV9C4WhHVX1EzlzDpdE3TbOB1JX2+aVnIJFb+ajl+4PQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-reload-server/-/dk-reload-server-3.1.11.tgz}
+  registry.npmjs.org/dk-reload-server@3.1.14:
+    resolution: {integrity: sha512-HR2Tsma8j93ZjhKrW0DKccpPeQboroRpgumGII+RmTG0vn8XpFsKbI41MAcz435VmLGOLUTYHUrBMpBOXtIZqQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-reload-server/-/dk-reload-server-3.1.14.tgz}
     name: dk-reload-server
-    version: 3.1.11
+    version: 3.1.14
     engines: {node: '>=16.0.0'}
     dependencies:
       chalk: registry.npmjs.org/chalk@4.1.2
@@ -5192,26 +5192,26 @@ packages:
       - utf-8-validate
     dev: false
 
-  registry.npmjs.org/dk-request@3.1.11(ts-interface-checker@1.0.2):
-    resolution: {integrity: sha512-Eo0zaINqEWzlIsRu56LWfnxQazLFRh3iAZKfKXU+ElkwqzZqz0L6kSCd+0YKe+vXE7hAPJkwMaItwmhB7JaVaw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-request/-/dk-request-3.1.11.tgz}
-    id: registry.npmjs.org/dk-request/3.1.11
+  registry.npmjs.org/dk-request@3.1.14(ts-interface-checker@1.0.2):
+    resolution: {integrity: sha512-Mmi0cmUAwzsU9wgDJiTdz3efL9382AB6MqnPFWKoDhd+lz/tvQYlnHe2hQyOpae/eX9GXuIQ9EBVFdIMgQK+/g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-request/-/dk-request-3.1.14.tgz}
+    id: registry.npmjs.org/dk-request/3.1.14
     name: dk-request
-    version: 3.1.11
+    version: 3.1.14
     peerDependencies:
       ts-interface-checker: '*'
     dependencies:
       axios: registry.npmjs.org/axios@1.4.0
-      dk-checker-remove-extraneous: registry.npmjs.org/dk-checker-remove-extraneous@3.1.11
+      dk-checker-remove-extraneous: registry.npmjs.org/dk-checker-remove-extraneous@3.1.14
       ts-interface-checker: registry.npmjs.org/ts-interface-checker@1.0.2
     transitivePeerDependencies:
       - debug
     dev: false
 
-  registry.npmjs.org/dk-webpack-config@3.1.11(@swc/core@1.3.66):
-    resolution: {integrity: sha512-MM4HcBF+lIfGPZSVvNj8l0cAYNIeUavfGYri2U7pQX5nXw/T4wbJXepL6/w+NySgz/Vv5/+uiODuWt/lJYqfyw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-config/-/dk-webpack-config-3.1.11.tgz}
-    id: registry.npmjs.org/dk-webpack-config/3.1.11
+  registry.npmjs.org/dk-webpack-config@3.1.14(@swc/core@1.3.66):
+    resolution: {integrity: sha512-rdKYiJIXXi2r0z5KdSDoRqcWIpV03orHF1HN3B0Kfz0/2EP6xgwEKqjbir7OAnfy4EkA1Fo8vzXrK56YYbHNAw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-config/-/dk-webpack-config-3.1.14.tgz}
+    id: registry.npmjs.org/dk-webpack-config/3.1.14
     name: dk-webpack-config
-    version: 3.1.11
+    version: 3.1.14
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@swc/core': ^1.3.40
@@ -5225,7 +5225,7 @@ packages:
       core-js: registry.npmjs.org/core-js@3.31.0
       css-loader: registry.npmjs.org/css-loader@6.8.1(webpack@5.88.0)
       css-minimizer-webpack-plugin: registry.npmjs.org/css-minimizer-webpack-plugin@5.0.1(webpack@5.88.0)
-      dk-conditional-aggregate-webpack-plugin: registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.11
+      dk-conditional-aggregate-webpack-plugin: registry.npmjs.org/dk-conditional-aggregate-webpack-plugin@3.1.14
       file-loader: registry.npmjs.org/file-loader@6.2.0(webpack@5.88.0)
       html-webpack-plugin: registry.npmjs.org/html-webpack-plugin@5.5.3(webpack@5.88.0)
       image-minimizer-webpack-plugin: registry.npmjs.org/image-minimizer-webpack-plugin@3.8.3(imagemin@8.0.1)(webpack@5.88.0)
@@ -5273,17 +5273,17 @@ packages:
       - webpack-dev-server
     dev: false
 
-  registry.npmjs.org/dk-webpack-parallel-simple@3.1.11(@swc-node/register@1.6.6)(webpack@5.88.0):
-    resolution: {integrity: sha512-47rX5LoIWPsTcSX4MMgM8NbCpyOCwhQ9vr7kWoteGTHp8Nr4Kz7eG+8TTnhg5CmuCHIvN8nQg3ftlMpwgIFLnQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-parallel-simple/-/dk-webpack-parallel-simple-3.1.11.tgz}
-    id: registry.npmjs.org/dk-webpack-parallel-simple/3.1.11
+  registry.npmjs.org/dk-webpack-parallel-simple@3.1.14(@swc-node/register@1.6.6)(webpack@5.88.0):
+    resolution: {integrity: sha512-HvSiQ0BLyo0W6+AOnGSa4p/5JHiO0ksbNyFeZySQigxcA790/Rw4rV9cO6HHDTWW5m3t4ohei7fliQGZ2oUSDQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dk-webpack-parallel-simple/-/dk-webpack-parallel-simple-3.1.14.tgz}
+    id: registry.npmjs.org/dk-webpack-parallel-simple/3.1.14
     name: dk-webpack-parallel-simple
-    version: 3.1.11
+    version: 3.1.14
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@swc-node/register': '*'
       webpack: '*'
     dependencies:
-      '@swc-node/register': registry.npmjs.org/@swc-node/register@1.6.6(@swc/core@1.3.66)(typescript@5.1.3)
+      '@swc-node/register': registry.npmjs.org/@swc-node/register@1.6.6(@swc/core@1.3.66)(typescript@5.0.4)
       chalk: registry.npmjs.org/chalk@4.1.1
       webpack: registry.npmjs.org/webpack@5.88.0(@swc/core@1.3.66)(webpack-cli@5.1.4)
     dev: false
@@ -5772,7 +5772,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.1.3)
+      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.0.4)
       debug: registry.npmjs.org/debug@3.2.7
       eslint: registry.npmjs.org/eslint@8.43.0
       eslint-import-resolver-node: registry.npmjs.org/eslint-import-resolver-node@0.3.7
@@ -5794,7 +5794,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.1.3)
+      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser@5.60.0(eslint@8.43.0)(typescript@5.0.4)
       array-includes: registry.npmjs.org/array-includes@3.1.6
       array.prototype.flat: registry.npmjs.org/array.prototype.flat@1.3.1
       array.prototype.flatmap: registry.npmjs.org/array.prototype.flatmap@1.3.1
@@ -6504,7 +6504,7 @@ packages:
       signal-exit: registry.npmjs.org/signal-exit@3.0.7
     dev: false
 
-  registry.npmjs.org/fork-ts-checker-webpack-plugin@6.5.3(eslint@8.43.0)(typescript@5.1.3)(webpack@5.88.0):
+  registry.npmjs.org/fork-ts-checker-webpack-plugin@6.5.3(eslint@8.43.0)(typescript@5.0.4)(webpack@5.88.0):
     resolution: {integrity: sha512-SbH/l9ikmMWycd5puHJKTkZJKddF4iRLyW3DeZ08HTI7NGyLS38MXd/KGgeWumQO7YNQbW2u/NtPT2YowbPaGQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.5.3.tgz}
     id: registry.npmjs.org/fork-ts-checker-webpack-plugin/6.5.3
     name: fork-ts-checker-webpack-plugin
@@ -6535,7 +6535,7 @@ packages:
       schema-utils: registry.npmjs.org/schema-utils@2.7.0
       semver: registry.npmjs.org/semver@7.5.1
       tapable: registry.npmjs.org/tapable@1.1.3
-      typescript: registry.npmjs.org/typescript@5.1.3
+      typescript: registry.npmjs.org/typescript@5.0.4
       webpack: registry.npmjs.org/webpack@5.88.0(@swc/core@1.3.66)(webpack-cli@5.1.4)
     dev: false
 
@@ -10522,7 +10522,7 @@ packages:
       webpack: registry.npmjs.org/webpack@5.88.0(@swc/core@1.3.66)(webpack-cli@5.1.4)
     dev: false
 
-  registry.npmjs.org/react-dev-utils@12.0.1(eslint@8.43.0)(typescript@5.1.3)(webpack@5.88.0):
+  registry.npmjs.org/react-dev-utils@12.0.1(eslint@8.43.0)(typescript@5.0.4)(webpack@5.88.0):
     resolution: {integrity: sha512-84Ivxmr17KjUupyqzFode6xKhjwuEJDROWKJy/BthkL7Wn6NJ8h4WE6k/exAv6ImS+0oZLRRW5j/aINMHyeGeQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-12.0.1.tgz}
     id: registry.npmjs.org/react-dev-utils/12.0.1
     name: react-dev-utils
@@ -10544,7 +10544,7 @@ packages:
       escape-string-regexp: registry.npmjs.org/escape-string-regexp@4.0.0
       filesize: registry.npmjs.org/filesize@8.0.7
       find-up: registry.npmjs.org/find-up@5.0.0
-      fork-ts-checker-webpack-plugin: registry.npmjs.org/fork-ts-checker-webpack-plugin@6.5.3(eslint@8.43.0)(typescript@5.1.3)(webpack@5.88.0)
+      fork-ts-checker-webpack-plugin: registry.npmjs.org/fork-ts-checker-webpack-plugin@6.5.3(eslint@8.43.0)(typescript@5.0.4)(webpack@5.88.0)
       global-modules: registry.npmjs.org/global-modules@2.0.0
       globby: registry.npmjs.org/globby@11.1.0
       gzip-size: registry.npmjs.org/gzip-size@6.0.0
@@ -10559,7 +10559,7 @@ packages:
       shell-quote: registry.npmjs.org/shell-quote@1.8.0
       strip-ansi: registry.npmjs.org/strip-ansi@6.0.1
       text-table: registry.npmjs.org/text-table@0.2.0
-      typescript: registry.npmjs.org/typescript@5.1.3
+      typescript: registry.npmjs.org/typescript@5.0.4
       webpack: registry.npmjs.org/webpack@5.88.0(@swc/core@1.3.66)(webpack-cli@5.1.4)
     transitivePeerDependencies:
       - eslint
@@ -10670,7 +10670,7 @@ packages:
       react-dom: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
     dev: false
 
-  registry.npmjs.org/react-styleguidist@13.1.1(@swc/core@1.3.66)(eslint@8.43.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)(webpack-cli@5.1.4)(webpack@5.88.0):
+  registry.npmjs.org/react-styleguidist@13.1.1(@swc/core@1.3.66)(eslint@8.43.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(webpack-cli@5.1.4)(webpack@5.88.0):
     resolution: {integrity: sha512-TUCBTB6+/eLrTKYCJ+7moW8nVKUNhE1Q+C8gJLDgb+z1Vuf3PydHR5uaIzVOnqItygNOI3NLGLgSuPT7MKLfsA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-styleguidist/-/react-styleguidist-13.1.1.tgz}
     id: registry.npmjs.org/react-styleguidist/13.1.1
     name: react-styleguidist
@@ -10730,7 +10730,7 @@ packages:
       q-i: registry.npmjs.org/q-i@2.0.1
       qss: registry.npmjs.org/qss@2.0.3
       react: registry.npmjs.org/react@18.2.0
-      react-dev-utils: registry.npmjs.org/react-dev-utils@12.0.1(eslint@8.43.0)(typescript@5.1.3)(webpack@5.88.0)
+      react-dev-utils: registry.npmjs.org/react-dev-utils@12.0.1(eslint@8.43.0)(typescript@5.0.4)(webpack@5.88.0)
       react-docgen: registry.npmjs.org/react-docgen@5.4.3
       react-docgen-annotation-resolver: registry.npmjs.org/react-docgen-annotation-resolver@2.0.0
       react-docgen-displayname-handler: registry.npmjs.org/react-docgen-displayname-handler@3.0.2(react-docgen@5.4.3)
@@ -12518,7 +12518,7 @@ packages:
       typescript: registry.npmjs.org/typescript@4.9.5
     dev: true
 
-  registry.npmjs.org/tsutils@3.21.0(typescript@5.1.3):
+  registry.npmjs.org/tsutils@3.21.0(typescript@5.0.4):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz}
     id: registry.npmjs.org/tsutils/3.21.0
     name: tsutils
@@ -12528,7 +12528,7 @@ packages:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: registry.npmjs.org/tslib@1.14.1
-      typescript: registry.npmjs.org/typescript@5.1.3
+      typescript: registry.npmjs.org/typescript@5.0.4
     dev: true
 
   registry.npmjs.org/tunnel-agent@0.6.0:
@@ -12631,11 +12631,11 @@ packages:
     hasBin: true
     dev: true
 
-  registry.npmjs.org/typescript@5.1.3:
-    resolution: {integrity: sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/typescript/-/typescript-5.1.3.tgz}
+  registry.npmjs.org/typescript@5.0.4:
+    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/typescript/-/typescript-5.0.4.tgz}
     name: typescript
-    version: 5.1.3
-    engines: {node: '>=14.17'}
+    version: 5.0.4
+    engines: {node: '>=12.20'}
     hasBin: true
 
   registry.npmjs.org/unbox-primitive@1.0.2:

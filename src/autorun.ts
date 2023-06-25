@@ -1,5 +1,4 @@
 import { IReactionDisposer } from 'mobx';
-import { loadComponentToConfig } from 'dk-react-mobx-globals';
 import { getActionsLogs } from 'dk-react-mobx-globals-logger';
 
 import { env } from 'env';
@@ -7,7 +6,6 @@ import { TypeGlobals } from 'models';
 import { excludeFalsy } from 'utils/tsUtils/excludeFalsy';
 import { printMeasures } from 'utils/system/printMeasures';
 import { messages } from 'utils/messages';
-import { routes } from 'routes';
 import { transformers } from 'compSystem/transformers';
 
 const actionsLogs = (globals: TypeGlobals) =>
@@ -54,30 +52,6 @@ function handlePageLoaded({ store }: TypeGlobals) {
   });
 }
 
-function handlePrefetchPages({ store }: TypeGlobals) {
-  /**
-   * Preload some chunks for performant experience
-   *
-   */
-
-  const prefetchable = [routes.first];
-  const DELAY = 200;
-  let loadTimeout: ReturnType<typeof setTimeout>;
-
-  return transformers.autorun(() => {
-    if (store.ui.frontLoaded) {
-      clearTimeout(loadTimeout);
-      loadTimeout = setTimeout(() => {
-        void Promise.all(
-          prefetchable
-            .filter((componentConfig) => !componentConfig.component)
-            .map((componentConfig) => loadComponentToConfig({ componentConfig }))
-        ).catch(() => false);
-      }, DELAY);
-    }
-  });
-}
-
 function setManualScrollRestoration() {
   if ('scrollRestoration' in window.history) {
     window.history.scrollRestoration = 'manual';
@@ -91,7 +65,6 @@ export function initAutorun(globals: TypeGlobals): Array<IReactionDisposer | voi
     IS_CLIENT && setScreenSize,
     IS_CLIENT && handlePageLoaded,
     IS_CLIENT && setMobileOrDesktop,
-    IS_CLIENT && handlePrefetchPages,
     IS_CLIENT && setManualScrollRestoration,
     env.LOGS_EXECUTING_ACTIONS && actionsLogs,
   ]

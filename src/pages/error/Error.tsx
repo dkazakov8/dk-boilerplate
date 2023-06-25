@@ -12,7 +12,7 @@ export type PropsErrorPage = {
 };
 
 // eslint-disable-next-line import/no-default-export
-export class Error extends ConnectedComponent<PropsErrorPage> {
+export default class Error extends ConnectedComponent<PropsErrorPage> {
   UNSAFE_componentWillMount() {
     const { actions } = this.context;
 
