@@ -74,10 +74,10 @@ export class ModularStoresSetter extends ConnectedComponent<{
 
         if (storeInitialData) {
           restoreState({
+            logs: env.LOGS_RESTORE_INITIAL,
             target: pagesObject[storeName],
             source: unescapeAllStrings(storeInitialData),
             transformers,
-            logs: true,
           });
 
           this.log(

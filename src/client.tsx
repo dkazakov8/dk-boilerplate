@@ -12,6 +12,7 @@ import { StoreContext } from 'compSystem/StoreContext';
 import { createGlobals } from 'compSystem/createGlobals';
 import { initAutorun } from 'autorun';
 import { isomorphPolyfills } from 'utils';
+import { env } from 'env';
 
 isomorphPolyfills();
 
@@ -28,10 +29,10 @@ void Promise.resolve()
   .then(() => loadableReady())
   .then(() => {
     restoreState({
+      logs: env.LOGS_RESTORE_INITIAL,
       target: globals.store,
       source: unescapeAllStrings(initialData),
       transformers,
-      logs: true,
     });
   })
   .then(() => initAutorun(globals))

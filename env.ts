@@ -85,6 +85,7 @@ class Env {
   LOGS_STORE_SETTER = false;
   LOGS_WATCHED_FILES = false;
   LOGS_RELOAD_BROWSER = false;
+  LOGS_RESTORE_INITIAL = false;
   LOGS_CANCELED_ACTIONS = false;
   LOGS_EXECUTING_ACTIONS = false;
   LOGS_GENERATION_DETAILS = false;
@@ -102,6 +103,7 @@ export const allowedClientKeys: Array<keyof Env> = [
   'GIT_COMMIT',
   'LOGS_MEASURES',
   'LOGS_STORE_SETTER',
+  'LOGS_RESTORE_INITIAL',
   'LOGS_CANCELED_ACTIONS',
   'LOGS_EXECUTING_ACTIONS',
 ];
