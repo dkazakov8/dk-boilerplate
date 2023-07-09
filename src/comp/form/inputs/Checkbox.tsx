@@ -12,7 +12,6 @@ import styles from '../Form.scss';
 
 export type PropsCheckbox<T extends TypeFormConfig<T>> = {
   name: keyof T;
-  inputRef: (...args: Array<any>) => any;
   formConfig: T;
   inputConfig: TypeInputCheckboxConfig;
   initialData?: Partial<TypeInputCheckboxConfig>;
@@ -65,7 +64,7 @@ export class Checkbox<T extends TypeFormConfig<T>> extends ConnectedComponent<Pr
   };
 
   render() {
-    const { name, inputConfig, initialData, inputRef } = this.props;
+    const { name, inputConfig, initialData } = this.props;
 
     return (
       <div className={this.wrapperClassName} onClick={this.handleChange}>
@@ -77,7 +76,6 @@ export class Checkbox<T extends TypeFormConfig<T>> extends ConnectedComponent<Pr
         <input
           type={'checkbox'}
           id={inputConfig.id}
-          ref={inputRef}
           name={name}
           checked={inputConfig.value}
           disabled={inputConfig.disabled}

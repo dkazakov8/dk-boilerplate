@@ -20,7 +20,6 @@ type TypeChildrenProps<T> = { inputs: Record<keyof T, ReactNode>; submit: ReactN
 export type TypeInitialData<T> = { [Key in keyof T]?: Partial<T[Key]> };
 
 type PropsForm<T extends TypeFormConfig<T>> = {
-  onRefs?: (refs: Record<string, any>) => any;
   onSubmit?: TypeFormSubmit<T>;
   formConfig: T;
   className?: string;
@@ -37,8 +36,6 @@ export class Form<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsF
     textarea: Text,
     checkbox: Checkbox,
   };
-
-  elements: Record<string, any> = {};
 
   handlePreventSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -74,16 +71,6 @@ export class Form<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsF
       });
   };
 
-  componentDidMount() {
-    const { onRefs } = this.props;
-
-    if (onRefs) onRefs(this.elements);
-  }
-
-  bindRef = (name: string) => (node: any) => {
-    this.elements[name] = node;
-  };
-
   render() {
     const { children, className, formConfig, initialData, hiddenSubmit } = this.props;
 
@@ -101,7 +88,6 @@ export class Form<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsF
             <Component<T>
               key={name}
               name={name}
-              inputRef={this.bindRef(name)}
               formConfig={formConfig}
               inputConfig={inputConfig!}
               initialData={initialData?.[name]}

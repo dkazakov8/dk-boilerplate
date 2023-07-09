@@ -1,35 +1,7 @@
-import _pick from 'lodash/pick';
-
-// Webpack does not provide types for this, says just 'string'
-type TypeDevtool =
-  | 'eval'
-  | 'eval-cheap-source-map'
-  | 'eval-cheap-module-source-map'
-  | 'eval-source-map'
-  | 'eval-nosources-source-map'
-  | 'eval-nosources-cheap-source-map'
-  | 'eval-nosources-cheap-module-source-map'
-  | 'cheap-source-map'
-  | 'cheap-module-source-map'
-  | 'inline-cheap-source-map'
-  | 'inline-cheap-module-source-map'
-  | 'inline-source-map'
-  | 'inline-nosources-source-map'
-  | 'inline-nosources-cheap-source-map'
-  | 'inline-nosources-cheap-module-source-map'
-  | 'source-map'
-  | 'hidden-source-map'
-  | 'hidden-nosources-source-map'
-  | 'hidden-nosources-cheap-source-map'
-  | 'hidden-nosources-cheap-module-source-map'
-  | 'hidden-cheap-source-map'
-  | 'hidden-cheap-module-source-map'
-  | 'nosources-source-map'
-  | 'nosources-cheap-source-map'
-  | 'nosources-cheap-module-source-map';
+import { TypeDevtool } from 'dk-webpack-config';
 
 class Env {
-  constructor(params: Record<keyof Env, unknown>) {
+  constructor(params: Env) {
     Object.entries(params).forEach(([envKey, envValue]) => {
       // @ts-ignore
       const paramType = typeof this[envKey];
@@ -97,22 +69,19 @@ class Env {
  *
  */
 
-export const allowedClientKeys: Array<keyof Env> = [
-  'API_HOST',
-  'NODE_ENV',
-  'GIT_COMMIT',
-  'LOGS_MEASURES',
-  'LOGS_STORE_SETTER',
-  'LOGS_RESTORE_INITIAL',
-  'LOGS_CANCELED_ACTIONS',
-  'LOGS_EXECUTING_ACTIONS',
-];
-
 // eslint-disable-next-line no-process-env
 const envInstance = new Env(process.env as unknown as Env);
 
-export const env =
+export const env: Env =
   typeof IS_CLIENT !== 'undefined' && IS_CLIENT
-    ? // eslint-disable-next-line no-process-env
-      _pick(envInstance, allowedClientKeys)
+    ? ({
+        API_HOST: envInstance.API_HOST,
+        NODE_ENV: envInstance.NODE_ENV,
+        GIT_COMMIT: envInstance.GIT_COMMIT,
+        LOGS_MEASURES: envInstance.LOGS_MEASURES,
+        LOGS_STORE_SETTER: envInstance.LOGS_STORE_SETTER,
+        LOGS_RESTORE_INITIAL: envInstance.LOGS_RESTORE_INITIAL,
+        LOGS_CANCELED_ACTIONS: envInstance.LOGS_CANCELED_ACTIONS,
+        LOGS_EXECUTING_ACTIONS: envInstance.LOGS_EXECUTING_ACTIONS,
+      } as any)
     : envInstance;

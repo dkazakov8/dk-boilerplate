@@ -18,7 +18,6 @@ import styles from '../Form.scss';
 
 export type PropsText<T extends TypeFormConfig<T>> = {
   name: keyof T;
-  inputRef: (...args: Array<any>) => any;
   formConfig: T;
   inputConfig: TypeInputTextConfig;
   initialData?: Partial<TypeInputTextConfig>;
@@ -84,7 +83,7 @@ export class Text<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsT
 
   render() {
     const { getLn } = this.context;
-    const { name, inputConfig, initialData, inputRef } = this.props;
+    const { name, inputConfig, initialData } = this.props;
 
     const isTextarea = inputConfig.type === 'textarea';
 
@@ -101,7 +100,6 @@ export class Text<T extends TypeFormConfig<T>> extends ConnectedComponent<PropsT
 
     const componentProps = {
       id: inputConfig.id,
-      ref: inputRef,
       name,
       type: isTextarea ? undefined : 'text',
       value: inputConfig.value,

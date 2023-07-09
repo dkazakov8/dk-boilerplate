@@ -1,12 +1,11 @@
 import path from 'path';
 import fs from 'fs';
 
-import _pick from 'lodash/pick';
 import chalk from 'chalk';
 import { createClientConfig } from 'dk-webpack-config';
 
 import { paths } from '../paths';
-import { env, allowedClientKeys } from '../env';
+import { env } from '../env';
 
 const copyFilesConfig = [
   {
@@ -40,7 +39,7 @@ export default createClientConfig({
   speedMeasure: env.BUILD_MEASURE,
   templatePath: path.resolve(paths.source, 'templates/template.html'),
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  defineParams: { 'process.env': _pick(env, allowedClientKeys) },
+  defineParams: { 'process.env': env },
   browserslist: JSON.parse(fs.readFileSync(paths.package, 'utf-8')).browserslist,
   filenameHash: env.FILENAME_HASH,
   circularCheck: env.CIRCULAR_CHECK,
