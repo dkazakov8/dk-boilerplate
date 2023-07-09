@@ -7,17 +7,13 @@ const routesObject = addNames({
   first2: {
     path: '/',
     pageName: 'first',
-    loader: loadable(() => import('pages/first/First')),
-    storeLoader: () => import('pages/first/store'),
-    actionsLoader: () => import('pages/first/actions'),
+    loader: loadable(() => import('pages/first/First') as any),
     params: {},
   },
   second: {
     path: '/second',
     pageName: 'second',
-    loader: loadable(() => import('pages/second/Second')),
-    storeLoader: () => import('pages/second/store'),
-    actionsLoader: () => import('pages/second/actions'),
+    loader: loadable(() => import('pages/second/Second') as any),
     params: {},
     before: () => {
       // eslint-disable-next-line no-console
@@ -27,15 +23,15 @@ const routesObject = addNames({
 
   error404: {
     path: '/error404',
-    pageName: 'error',
-    loader: loadable(() => import('pages/error/Error')),
+    pageName: 'second',
+    loader: loadable(() => import('pages/error/Error') as any),
     props: { errorNumber: 404 },
     params: {},
   },
   error500: {
     path: '/error500',
-    pageName: 'error',
-    loader: loadable(() => import('pages/error/Error')),
+    pageName: 'second',
+    loader: loadable(() => import('pages/error/Error') as any),
     props: { errorNumber: 500 },
     params: {},
   },

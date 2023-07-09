@@ -7,6 +7,9 @@ import { Counter } from 'comp/counter';
 import { messages } from './messages';
 import styles from './Second.scss';
 
+export * as store from './store';
+export * as actions from './actions';
+
 const DELAY = 1000;
 
 // eslint-disable-next-line import/no-default-export

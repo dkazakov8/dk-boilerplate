@@ -213,7 +213,7 @@ export class Router extends ConnectedComponent<{}, TypeRouteValues> {
   setComponent = (currentRouteName: keyof typeof routes) => {
     const componentConfig = routes[currentRouteName];
     const props = 'props' in componentConfig ? componentConfig.props : {};
-    const RouteComponent: any = componentConfig.component;
+    const RouteComponent: any = IS_CLIENT ? componentConfig.component : componentConfig.loader;
 
     if (componentConfig.store?.default) {
       this.extendStores({ [componentConfig.pageName]: componentConfig.store?.default });

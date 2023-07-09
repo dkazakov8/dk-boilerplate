@@ -3,10 +3,10 @@ import '@types/segment-analytics';
 import { getLn } from 'dk-localize';
 import {
   TypeActionGenerator,
-  TypeGlobalsGenerator,
   TypeApiErrorGenerator,
   TypeApiRequestGenerator,
   TypeApiResponseGenerator,
+  TypeGlobalsGenerator,
 } from 'dk-react-mobx-globals';
 
 // eslint-disable-next-line import/no-restricted-paths
@@ -19,6 +19,7 @@ import modularActions from 'modularActions';
 import * as api from 'api';
 // eslint-disable-next-line import/no-restricted-paths
 import * as staticStores from 'stores';
+// eslint-disable-next-line import/no-restricted-paths
 /**
  * Actions
  *
@@ -91,6 +92,5 @@ declare global {
     };
     api?: TypeGlobals['api'];
     globals?: TypeGlobals;
-    dataLayer?: Array<any>;
   }
 }

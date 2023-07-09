@@ -11,7 +11,6 @@ const { compilerOptions } = JSON.parse(
 );
 
 const headerTemplate = `/* eslint-disable */\n// This file is auto-generated\n\n`;
-const reexportIncludeChildrenMask = /^((?!messages\.ts|\.scss).)*$/;
 
 type TypeReexportConfig = TypeProcessParamsReexport['config'];
 type TypeReexportConfigWithoutFolder = Omit<TypeReexportConfig[number], 'folder'>;
@@ -19,14 +18,16 @@ type TypeReexportConfigWithoutFolder = Omit<TypeReexportConfig[number], 'folder'
 const defaultReexportConfig: TypeReexportConfigWithoutFolder = {
   importTemplate: ({ fileNameNoExt }) => `export * from './${fileNameNoExt}';\n`,
   fileNameTemplate: ({ folderName }) => `_${folderName}.ts`,
-  includeChildrenMask: reexportIncludeChildrenMask,
+  includeChildrenMask: /^((?!messages\.ts|\.scss).)*$/,
   headerTemplate,
 };
 
 const defaultReexportConfigWithImportDefault: TypeReexportConfigWithoutFolder = {
-  ...defaultReexportConfig,
   importTemplate: ({ fileNameNoExt }) =>
     `export { default as ${fileNameNoExt} } from './${fileNameNoExt}';\n`,
+  fileNameTemplate: ({ folderName }) => `_${folderName}.ts`,
+  includeChildrenMask: /^((?!messages\.ts|\.scss).)*$/,
+  headerTemplate,
 };
 
 const reexportPagesConfigs: TypeReexportConfig = [];
