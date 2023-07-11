@@ -13,32 +13,24 @@ const { compilerOptions } = JSON.parse(
 const headerTemplate = `/* eslint-disable */\n// This file is auto-generated\n\n`;
 
 type TypeReexportConfig = TypeProcessParamsReexport['config'];
-type TypeReexportConfigWithoutFolder = Omit<TypeReexportConfig[number], 'folder'>;
 
-const defaultReexportConfig: TypeReexportConfigWithoutFolder = {
+const defaultReexportConfig: Omit<TypeReexportConfig[number], 'folder'> = {
   importTemplate: ({ fileNameNoExt }) => `export * from './${fileNameNoExt}';\n`,
   fileNameTemplate: ({ folderName }) => `_${folderName}.ts`,
   includeChildrenMask: /^((?!messages\.ts|\.scss).)*$/,
-  headerTemplate,
 };
 
-const defaultReexportConfigWithImportDefault: TypeReexportConfigWithoutFolder = {
-  importTemplate: ({ fileNameNoExt }) =>
-    `export { default as ${fileNameNoExt} } from './${fileNameNoExt}';\n`,
-  fileNameTemplate: ({ folderName }) => `_${folderName}.ts`,
-  includeChildrenMask: /^((?!messages\.ts|\.scss).)*$/,
-  headerTemplate,
-};
+const reexportPagesActions: TypeReexportConfig = fs
+  .readdirSync(paths.pages)
+  .reduce((acc, pageFolder) => {
+    const actionsFilePath = path.resolve(paths.pages, pageFolder, 'actions');
 
-const reexportPagesConfigs: TypeReexportConfig = [];
+    if (fs.existsSync(actionsFilePath) && fs.lstatSync(actionsFilePath).isDirectory()) {
+      acc.push({ folder: actionsFilePath, ...defaultReexportConfig });
+    }
 
-fs.readdirSync(paths.pages).forEach((fName) => {
-  const actionsFilePath = path.resolve(paths.pages, fName, 'actions');
-
-  if (fs.existsSync(actionsFilePath)) {
-    reexportPagesConfigs.push({ folder: actionsFilePath, ...defaultReexportConfig });
-  }
-});
+    return acc;
+  }, [] as TypeReexportConfig);
 
 function createReexportConfig({
   includeRoot,
@@ -53,7 +45,7 @@ function createReexportConfig({
     config.push({ folder: folderPath, ...defaultReexportConfig });
   }
 
-  fs.readdirSync(folderPath).forEach((fName: string) => {
+  fs.readdirSync(folderPath).forEach((fName) => {
     const filePath = path.resolve(folderPath, fName);
 
     if (fs.lstatSync(filePath).isDirectory()) {
@@ -73,7 +65,6 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
         targetFolder: path.resolve(paths.validators, 'api'),
         triggerFolder: path.resolve(paths.source, 'models'),
         includeChildrenMask: /^((?!_).)*$/,
-        headerTemplate,
         compilerOptions,
       },
     ],
@@ -104,7 +95,6 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
           `\nexport { ${subFoldersOfFiles.map(({ moduleName }) => moduleName).join(', ')} };\n`,
         importTemplate: ({ moduleName, relativePath }) =>
           `import * as ${moduleName} from './${relativePath}';\n`,
-        headerTemplate,
       },
       {
         folder: paths.pages,
@@ -114,7 +104,6 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
           `\nexport { ${subFoldersOfFiles.map(({ moduleName }) => moduleName).join(', ')} };\n`,
         importTemplate: ({ moduleName, relativePath }) =>
           `import ${moduleName} from './${relativePath}';\n`,
-        headerTemplate,
       },
       {
         folder: path.resolve(paths.source, 'comp/modal/lib'),
@@ -125,7 +114,6 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
             .map(({ moduleName }) => `${moduleName}: "${moduleName}"`)
             .join(', ')} };\n`,
         importTemplate: () => ``,
-        headerTemplate,
         includeChildrenMask: /^((?!messages\.ts|\.scss|_).)*$/,
       },
     ],
@@ -133,7 +121,7 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
   {
     plugin: 'reexport',
     config: [
-      ...reexportPagesConfigs,
+      ...reexportPagesActions,
       ...createReexportConfig({
         folderPath: paths.actions,
         includeRoot: false,
@@ -188,11 +176,15 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
       },
       {
         folder: path.resolve(paths.source, 'stores'),
-        ...defaultReexportConfigWithImportDefault,
+        ...defaultReexportConfig,
+        importTemplate: ({ fileNameNoExt }) =>
+          `export { default as ${fileNameNoExt} } from './${fileNameNoExt}';\n`,
       },
       {
         folder: path.resolve(paths.validators, 'api'),
-        ...defaultReexportConfigWithImportDefault,
+        ...defaultReexportConfig,
+        importTemplate: ({ fileNameNoExt }) =>
+          `export { default as ${fileNameNoExt} } from './${fileNameNoExt}';\n`,
       },
     ],
   },

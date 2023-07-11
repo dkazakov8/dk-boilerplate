@@ -3,6 +3,7 @@ import path from 'path';
 import zlib from 'zlib';
 import fs from 'fs';
 
+import fsExtra from 'fs-extra';
 import betterSpawn from 'better-spawn';
 import chalk from 'chalk';
 import { run, TypeConfig } from 'dk-webpack-parallel-simple';
@@ -59,10 +60,7 @@ function buildSentryFile() {
 }
 
 function afterFirstBuild() {
-  fs.copyFileSync(
-    path.resolve(paths.source, 'templates/error500.html'),
-    path.resolve(paths.build, 'error500.html')
-  );
+  fsExtra.copySync(path.resolve(paths.source, 'templates'), paths.build, { overwrite: true });
 
   buildSentryFile();
 

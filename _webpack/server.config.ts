@@ -16,7 +16,6 @@ process.on('message', (msg) => {
 
 // eslint-disable-next-line import/no-default-export,import/no-unused-modules
 export default createServerConfig({
-  copyFilesConfig: [],
   ssr: env.SSR_ENABLED,
   entry: { server: path.resolve(paths.source, 'server.tsx') },
   alias: { env: paths.env, paths: paths.paths },
