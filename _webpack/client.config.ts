@@ -7,13 +7,6 @@ import { createClientConfig } from 'dk-webpack-config';
 import { paths } from '../paths';
 import { env } from '../env';
 
-const copyFilesConfig = [
-  {
-    from: path.resolve(paths.source, 'templates/favicon16.png'),
-    to: path.resolve(paths.build, 'favicon16.png'),
-  },
-];
-
 process.title = 'node: Webpack [client] compiler';
 
 let generationFinished = true;
@@ -24,7 +17,6 @@ process.on('message', (msg) => {
 
 // eslint-disable-next-line import/no-default-export,import/no-unused-modules
 export default createClientConfig({
-  copyFilesConfig,
   ssr: env.SSR_ENABLED,
   alias: { env: paths.env, paths: paths.paths },
   entry: { client: path.resolve(paths.source, 'client.tsx') },

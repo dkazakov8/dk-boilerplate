@@ -23,14 +23,14 @@ const routesObject = addNames({
 
   error404: {
     path: '/error404',
-    pageName: 'second',
+    pageName: 'error',
     loader: loadable(() => import('pages/error/Error') as any),
     props: { errorNumber: 404 },
     params: {},
   },
   error500: {
     path: '/error500',
-    pageName: 'second',
+    pageName: 'error',
     loader: loadable(() => import('pages/error/Error') as any),
     props: { errorNumber: 500 },
     params: {},
