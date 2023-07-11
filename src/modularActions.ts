@@ -4,4 +4,4 @@
 import * as first from './pages/first/actions';
 import * as second from './pages/second/actions';
 
-export default { pages: { first, second } };
+export { first, second };

@@ -101,20 +101,19 @@ export const generatorConfigs: TypeGenerateFilesParams['configs'] = [
         targetFile: path.resolve(paths.source, 'modularActions.ts'),
         childFileOrFolderName: 'actions',
         exportTemplate: ({ subFoldersOfFiles }) =>
-          `\nexport default { pages: { ${subFoldersOfFiles
-            .map(({ moduleName }) => moduleName)
-            .join(', ')} } };\n`,
+          `\nexport { ${subFoldersOfFiles.map(({ moduleName }) => moduleName).join(', ')} };\n`,
         importTemplate: ({ moduleName, relativePath }) =>
           `import * as ${moduleName} from './${relativePath}';\n`,
         headerTemplate,
       },
       {
         folder: paths.pages,
-        targetFile: path.resolve(paths.source, 'modularStoresReexport.ts'),
+        targetFile: path.resolve(paths.source, 'modularStores.ts'),
         childFileOrFolderName: 'store.ts',
-        exportTemplate: () => '',
+        exportTemplate: ({ subFoldersOfFiles }) =>
+          `\nexport { ${subFoldersOfFiles.map(({ moduleName }) => moduleName).join(', ')} };\n`,
         importTemplate: ({ moduleName, relativePath }) =>
-          `export { default as ${moduleName} } from './${relativePath}';\n`,
+          `import ${moduleName} from './${relativePath}';\n`,
         headerTemplate,
       },
       {

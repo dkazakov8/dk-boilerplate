@@ -7,7 +7,7 @@ import { Counter } from 'comp/counter';
 import { messages } from './messages';
 import styles from './Second.scss';
 
-export * as store from './store';
+export { default as store } from './store';
 export * as actions from './actions';
 
 const DELAY = 1000;

@@ -1,4 +1,7 @@
-import * as pages from './modularStoresReexport';
+/* eslint-disable */
+// This file is auto-generated
 
-// eslint-disable-next-line import/no-default-export
-export default { pages };
+import first from './pages/first/store';
+import second from './pages/second/store';
+
+export { first, second };

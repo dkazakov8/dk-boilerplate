@@ -10,11 +10,11 @@ import {
 } from 'dk-react-mobx-globals';
 
 // eslint-disable-next-line import/no-restricted-paths
-import modularStores from 'modularStores';
+import * as modularStores from 'modularStores';
 // eslint-disable-next-line import/no-restricted-paths
 import globalActions from 'actions';
 // eslint-disable-next-line import/no-restricted-paths
-import modularActions from 'modularActions';
+import * as modularActions from 'modularActions';
 // eslint-disable-next-line import/no-restricted-paths
 import * as api from 'api';
 // eslint-disable-next-line import/no-restricted-paths
@@ -76,9 +76,9 @@ export type TypeApiError<TApiName extends keyof TypeApiRaw> = TypeApiErrorGenera
 export type TypeGlobals = TypeGlobalsGenerator<
   TypeApiRaw,
   typeof staticStores,
-  typeof modularStores,
+  { pages: typeof modularStores },
   typeof globalActions,
-  typeof modularActions,
+  { pages: typeof modularActions },
   typeof getLn
 >;
 
