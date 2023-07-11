@@ -1,13 +1,5 @@
-import '@types/intercom-web';
-import '@types/segment-analytics';
 import { getLn } from 'dk-localize';
-import {
-  TypeActionGenerator,
-  TypeApiErrorGenerator,
-  TypeApiRequestGenerator,
-  TypeApiResponseGenerator,
-  TypeGlobalsGenerator,
-} from 'dk-react-mobx-globals';
+import { TypeActionGenerator, TypeGlobalsGenerator } from 'dk-react-mobx-globals';
 
 // eslint-disable-next-line import/no-restricted-paths
 import * as modularStores from 'modularStores';
@@ -19,7 +11,7 @@ import * as modularActions from 'modularActions';
 import * as api from 'api';
 // eslint-disable-next-line import/no-restricted-paths
 import * as staticStores from 'stores';
-// eslint-disable-next-line import/no-restricted-paths
+
 /**
  * Actions
  *
@@ -46,20 +38,9 @@ export type TypeAction<T = undefined> = TypeActionGenerator<TypeGlobals, T>;
 
 type TypeApiRaw = typeof api;
 
-export type TypeApiRequest<TApiName extends keyof TypeApiRaw> = TypeApiRequestGenerator<
-  TypeApiRaw,
-  TApiName
->;
-
-export type TypeApiResponse<TApiName extends keyof TypeApiRaw> = TypeApiResponseGenerator<
-  TypeApiRaw,
-  TApiName
->;
-
-export type TypeApiError<TApiName extends keyof TypeApiRaw> = TypeApiErrorGenerator<
-  TypeApiRaw,
-  TApiName
->;
+export type TypeApiError<TApiName extends keyof TypeApiRaw> = TypeApiRaw[TApiName]['error'];
+export type TypeApiRequest<TApiName extends keyof TypeApiRaw> = TypeApiRaw[TApiName]['request'];
+export type TypeApiResponse<TApiName extends keyof TypeApiRaw> = TypeApiRaw[TApiName]['response'];
 
 /**
  * Globals
@@ -90,7 +71,5 @@ declare global {
     SERVER_CONFIG: {
       API_HOST: string;
     };
-    api?: TypeGlobals['api'];
-    globals?: TypeGlobals;
   }
 }

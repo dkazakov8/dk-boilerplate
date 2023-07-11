@@ -1,7 +1,6 @@
 import './styles/global.scss';
 import { loadableReady } from '@loadable/component';
 import { hydrateRoot } from 'react-dom/client';
-// eslint-disable-next-line no-restricted-imports
 import _omitBy from 'lodash/omitBy';
 import { unescapeAllStrings } from 'dk-react-mobx-globals';
 import { restoreState } from 'dk-mobx-restore-state';
@@ -17,8 +16,6 @@ import { env } from 'env';
 isomorphPolyfills();
 
 const globals = createGlobals();
-
-window.globals = globals;
 
 const initialData = _omitBy(
   window.INITIAL_DATA,
