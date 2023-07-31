@@ -1,5 +1,5 @@
 import { MouseEvent, RefObject, CSSProperties, ReactNode } from 'react';
-import { replaceDynamicValues } from 'dk-react-mobx-globals/dist/utils/replaceDynamicValues';
+import { replaceDynamicValues } from 'dk-react-mobx-router/dist/utils/replaceDynamicValues';
 
 import { ConnectedComponent } from 'compSystem/ConnectedComponent';
 import { TypeRouteValues } from 'routes';

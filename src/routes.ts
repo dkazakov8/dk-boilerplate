@@ -1,5 +1,5 @@
 import loadable from '@loadable/component';
-import { TypeRoutesGenerator } from 'dk-react-mobx-globals';
+import { TypeRoutesGenerator } from 'dk-react-mobx-router';
 
 import { addNames } from 'utils/system/addNames';
 

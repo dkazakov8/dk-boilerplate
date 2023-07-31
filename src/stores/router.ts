@@ -1,4 +1,4 @@
-import { findRouteByPathname } from 'dk-react-mobx-globals/dist/utils/findRouteByPathname';
+import { findRouteByPathname } from 'dk-react-mobx-router';
 
 import { transformers } from 'compSystem/transformers';
 import { routes } from 'routes';

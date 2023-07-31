@@ -1,4 +1,4 @@
-import { redirectToGenerator, TypeRedirectToParams } from 'dk-react-mobx-globals';
+import { redirectToGenerator, TypeRedirectToParams } from 'dk-react-mobx-router';
 
 import { routes } from 'routes';
 import { history } from 'utils';
