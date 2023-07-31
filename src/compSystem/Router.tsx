@@ -216,10 +216,10 @@ export class Router extends ConnectedComponent<{}, TypeRouteValues> {
     const RouteComponent: any = IS_CLIENT ? componentConfig.component : componentConfig.loader;
 
     if (componentConfig.store) {
-      this.extendStores({ [componentConfig.pageName]: componentConfig.store });
+      this.extendStores({ [componentConfig.pageName!]: componentConfig.store });
     }
     if (componentConfig.actions) {
-      this.extendActions({ [componentConfig.pageName]: componentConfig.actions });
+      this.extendActions({ [componentConfig.pageName!]: componentConfig.actions });
     }
 
     transformers.batch(() => {

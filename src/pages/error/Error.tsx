@@ -11,8 +11,7 @@ export type PropsErrorPage = {
   errorNumber: typeof errorCodes.INTERNAL_ERROR | typeof errorCodes.NOT_FOUND;
 };
 
-// eslint-disable-next-line import/no-default-export
-export default class Error extends ConnectedComponent<PropsErrorPage> {
+export class Error extends ConnectedComponent<PropsErrorPage> {
   UNSAFE_componentWillMount() {
     const { actions } = this.context;
 

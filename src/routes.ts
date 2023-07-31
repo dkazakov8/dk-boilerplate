@@ -6,14 +6,12 @@ import { addNames } from 'utils/system/addNames';
 const routesObject = addNames({
   first2: {
     path: '/',
-    pageName: 'first',
-    loader: loadable(() => import('pages/first/First') as any),
+    loader: loadable(() => import('pages/first') as any),
     params: {},
   },
   second: {
-    path: '/second',
-    pageName: 'second',
-    loader: loadable(() => import('pages/second/Second') as any),
+    path: '/second2',
+    loader: loadable(() => import('pages/second') as any),
     params: {},
     before: () => {
       // eslint-disable-next-line no-console
@@ -23,15 +21,13 @@ const routesObject = addNames({
 
   error404: {
     path: '/error404',
-    pageName: 'error',
-    loader: loadable(() => import('pages/error/Error') as any),
+    loader: loadable(() => import('pages/error') as any),
     props: { errorNumber: 404 },
     params: {},
   },
   error500: {
     path: '/error500',
-    pageName: 'error',
-    loader: loadable(() => import('pages/error/Error') as any),
+    loader: loadable(() => import('pages/error') as any),
     props: { errorNumber: 500 },
     params: {},
   },

@@ -7,13 +7,9 @@ import { Counter } from 'comp/counter';
 import { messages } from './messages';
 import styles from './Second.scss';
 
-export { default as store } from './store';
-export * as actions from './actions';
-
 const DELAY = 1000;
 
-// eslint-disable-next-line import/no-default-export
-export default class Second extends ConnectedComponent {
+export class Second extends ConnectedComponent {
   localTimeout?: ReturnType<typeof setTimeout> = undefined;
 
   localState = transformers.observable({
