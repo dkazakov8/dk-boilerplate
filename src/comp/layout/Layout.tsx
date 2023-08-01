@@ -12,28 +12,28 @@ export class Layout extends ConnectedComponent<{ children: ReactNode }, TypeRout
   render() {
     const { getLn, store } = this.context;
 
-    const links = [
-      { route: routes.first2, title: getLn(messages.linkFirst) },
-      { route: routes.second, title: getLn(messages.linkSecond) },
-    ];
-
     return (
       <div className={styles.wrapper}>
         <div className={styles.menu}>
-          {links.map((link) => {
-            return (
-              <Link
-                key={link.title}
-                route={link.route}
-                className={cn(
-                  styles.menuItem,
-                  store.router.currentRoute.name === link.route.name && styles.isActive
-                )}
-              >
-                {link.title}
-              </Link>
-            );
-          })}
+          <Link<typeof routes.first2>
+            route={routes.first2}
+            className={cn(
+              styles.menuItem,
+              store.router.currentRoute.name === routes.first2.name && styles.isActive
+            )}
+          >
+            {getLn(messages.linkFirst)}
+          </Link>
+          <Link
+            route={routes.second}
+            params={{ id: '123' }}
+            className={cn(
+              styles.menuItem,
+              store.router.currentRoute.name === routes.second.name && styles.isActive
+            )}
+          >
+            {getLn(messages.linkSecond)}
+          </Link>
         </div>
         <div className={styles.content}>{this.props.children}</div>
       </div>

@@ -52,7 +52,7 @@ const handleRedirectError: TypeAction<TypeParams> = (globals, params) => {
 
   const routesPaths = Object.values(routes).map((route) => route.path);
 
-  if (routesPaths.includes(error.message)) return Promise.resolve();
+  if (routesPaths.includes(error.message as any)) return Promise.resolve();
 
   if (IS_CLIENT) {
     console.error(error);

@@ -1,21 +1,24 @@
 import loadable from '@loadable/component';
-import { TypeRoutesGenerator } from 'dk-react-mobx-router';
+import { createRouterConfig } from 'dk-react-mobx-router';
 
-import { addNames } from 'utils/system/addNames';
-
-const routesObject = addNames({
+export const routes = createRouterConfig({
   first2: {
     path: '/',
     loader: loadable(() => import('pages/first') as any),
     params: {},
   },
   second: {
-    path: '/second2',
+    path: '/second2/:id',
     loader: loadable(() => import('pages/second') as any),
-    params: {},
-    before: () => {
+    validators: {
+      id: (id) => id.length !== 0,
+    },
+    params: { id: '1' as string },
+    beforeEnter: () => {
       // eslint-disable-next-line no-console
       console.log(1);
+
+      return Promise.resolve();
     },
   },
 
@@ -31,8 +34,6 @@ const routesObject = addNames({
     props: { errorNumber: 500 },
     params: {},
   },
-});
-
-export const routes = routesObject as TypeRoutesGenerator<typeof routesObject>;
+} as const);
 
 export type TypeRouteValues = (typeof routes)[keyof typeof routes];
