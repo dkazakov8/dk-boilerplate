@@ -18,7 +18,7 @@
     "format:js": "eslint --ignore-path .formatignore --ext \".js,.ts,.tsx\" --fix",
     "format:style": "stylelint --ignore-path .formatignore --fix",
 
-    "check-types": "tsc --project tsconfig-check.json",
+    "check-types": "tsc",
     "check-types-precommit": "tsc --project tsconfig-precommit.json",
 
     "sg": "node -r @swc-node/register -r dotenv/config ./styleguide/start.ts"

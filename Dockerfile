@@ -1,6 +1,6 @@
 FROM node:18.6.0-slim
 
-RUN npm install -g pnpm@6.32.3
+RUN npm install -g pnpm@8.6.3
 
 WORKDIR /app
 
